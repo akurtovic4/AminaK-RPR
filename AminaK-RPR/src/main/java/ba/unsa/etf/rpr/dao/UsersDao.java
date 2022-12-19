@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface UsersDao {
+import ba.unsa.etf.rpr.domain.Users;
+
+public interface UsersDao extends Dao<Users> {
 }

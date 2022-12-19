@@ -1,4 +1,7 @@
 package ba.unsa.etf.rpr.dao;
 
-public class UsersDaoSQLImpl {
+import ba.unsa.etf.rpr.domain.Reservations;
+import ba.unsa.etf.rpr.domain.Users;
+
+public class UsersDaoSQLImpl extends AbstractDao<Users> implements UsersDao{
 }

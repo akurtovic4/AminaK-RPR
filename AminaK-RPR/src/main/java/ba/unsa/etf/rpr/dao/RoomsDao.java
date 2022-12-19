@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface RoomsDao {
+import ba.unsa.etf.rpr.domain.Rooms;
+
+public interface RoomsDao extends Dao<Rooms> {
 }

@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public class AbstractDao {
+import ba.unsa.etf.rpr.domain.Idable;
+
+public class AbstractDao<T extends Idable> implements Dao<T> {
 }
