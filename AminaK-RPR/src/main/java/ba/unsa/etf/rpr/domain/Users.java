@@ -1,12 +1,13 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Users implements Idable{
 
     private String name;
     private String email;
-    private Date birth_date;
+    private LocalDate birth_date;
     private int id;
 
     public Users(String name, String email, Date birth_date, int id) {
@@ -52,4 +53,15 @@ public class Users implements Idable{
     public int getId() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Customer: " + this.name+
+                "Email: " + this.email+
+                "Birthdate: "+ this.birth_date+
+                "ID: " + this.id;
+    }
 }
+
+
+

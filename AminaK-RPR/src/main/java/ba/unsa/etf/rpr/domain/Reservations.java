@@ -9,6 +9,9 @@ public class Reservations implements Idable{
     private Date end;
     private String comments;
 
+    private Users user;
+    private Rooms room;
+
     public Reservations(int id, Date start, Date end, String comments) {
         this.id = id;
         this.start = start;
@@ -51,5 +54,15 @@ public class Reservations implements Idable{
     @Override
     public int getId() {
         return 0;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Customer: " + this.user.toString()
+                + "\nRoom: " + this.room.toString()
+                + "\nCheckIn Date: " + this.start
+                + "\nCheckOut Date: " + this.end
+                + "\nReservation ID: " + this.id;
     }
 }

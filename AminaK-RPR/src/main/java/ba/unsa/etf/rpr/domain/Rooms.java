@@ -4,6 +4,15 @@ public class Rooms implements Idable{
 
     private int id;
     private boolean availability;
+    private int roomNumber;
+    private Double price;
+    private Users user;
+
+
+
+
+
+
 
     public Rooms(int id, boolean availability) {
         this.id = id;
@@ -29,5 +38,12 @@ public class Rooms implements Idable{
     @Override
     public int getId() {
         return 0;
+    }
+
+
+    @Override
+    public String toString() {
+        return  "Room Number: " + this.roomNumber
+                + " Price: KM" + this.price;
     }
 }
