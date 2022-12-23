@@ -1,23 +1,28 @@
 package ba.unsa.etf.rpr.domain;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.Objects;
 
-public class Users implements Idable{
+public class User implements Idable{
 
+    private int id;
     private String name;
     private String email;
     private LocalDate birth_date;
-    private int id;
 
-    public Users(String name, String email, Date birth_date, int id) {
+
+    public User(String name, String email, LocalDate birth_date, int id) {
         this.name = name;
         this.email = email;
         this.birth_date = birth_date;
         this.id = id;
     }
 
-    public Users() {
+    public User(String amina, LocalDate localDate, String email) {
+    }
+
+
+    public User() {
     }
 
     public String getName() {
@@ -36,22 +41,22 @@ public class Users implements Idable{
         this.email = email;
     }
 
-    public Date getBirth_date() {
+    public LocalDate getBirth_date() {
         return birth_date;
     }
 
-    public void setBirth_date(Date birth_date) {
+    public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
     }
 
     @Override
     public void setId(int id) {
-
+    this.id = id;
     }
 
     @Override
     public int getId() {
-        return 0;
+        return id;
     }
 
     @Override
@@ -60,6 +65,19 @@ public class Users implements Idable{
                 "Email: " + this.email+
                 "Birthdate: "+ this.birth_date+
                 "ID: " + this.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(birth_date, user.birth_date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, email, birth_date);
     }
 }
 

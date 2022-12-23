@@ -28,10 +28,13 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     public Connection getConnection(){
+
         return this.connection;
+
+
     }
 
-    public abstract T row2object(ResultSet rs) throws HotelException;
+    public abstract T row2object(ResultSet rs) throws HotelException, SQLException;
 
     public abstract Map<String, Object> object2row(T object);
 
@@ -179,4 +182,6 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
         return columns.toString();
     }
+
+
 }

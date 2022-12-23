@@ -1,6 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-import ba.unsa.etf.rpr.domain.Reservations;
+import ba.unsa.etf.rpr.domain.Reservation;
 
-public interface ReservationsDao extends Dao<Reservations> {
+public interface ReservationsDao extends Dao<Reservation> {
 }
