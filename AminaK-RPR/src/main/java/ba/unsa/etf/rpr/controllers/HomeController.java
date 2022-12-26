@@ -50,4 +50,28 @@ public class HomeController {
             e.printStackTrace();
         }
     }
+
+
+
+    public void showLogin(ActionEvent event){
+        try {
+            System.out.printf("login");
+
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
+            fxmlLoader.setController(new LoginController());
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Log in");
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.initStyle(StageStyle.UTILITY);
+            stage.setResizable(false);
+            stage.show();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
