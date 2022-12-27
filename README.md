@@ -1,6 +1,4 @@
 # AminaK-RPR
 
-AminaK-RPR
-
-Ovaj projekat predstavlja pojednostavljeni sistem za hotel. Korisniku se omogućava da pogleda sobe, registruje se te napravi rezervaciju koju moze otkazati.
-Admin vidi sve rezervacije, može obrisati korisnički račun te vidi sve korisničke komentare.
+This project represents a simplified system for a hotel. The user can view the rooms, register and make a reservation that can be canceled.
+Admin sees all reservations, can delete user account and see all user comments.
