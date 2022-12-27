@@ -8,7 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
+<?import java.net.URL?>
 <AnchorPane prefHeight="244.0" prefWidth="377.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+
+   <stylesheets>
+      <URL value="@/css/login.css" />
+   </stylesheets>
    <children>
       <ImageView fitHeight="267.0" fitWidth="406.0">
          <image>
