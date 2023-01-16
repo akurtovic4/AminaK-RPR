@@ -22,6 +22,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
             user.setName(rs.getString("name"));
             user.setBirth_date(LocalDate.ofEpochDay(rs.getDate("birth_date").getTime()));
             user.setEmail(rs.getString("email"));
+            user.setPassword(rs.getString("password"));
             return user;
         }
         catch (SQLException e){
@@ -36,6 +37,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
         item.put("name", object.getName());
         item.put("birth_date", object.getBirth_date());
         item.put("email", object.getEmail());
+        item.put("password", object.getPassword());
         return item;
     }
 }

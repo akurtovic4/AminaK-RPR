@@ -10,15 +10,17 @@ public class User implements Idable{
     private String email;
     private LocalDate birth_date;
 
+    private String password;
 
-    public User(String name, String email, LocalDate birth_date, int id) {
+    public User(String name, String email, LocalDate birth_date, int id, String password) {
         this.name = name;
         this.email = email;
         this.birth_date = birth_date;
         this.id = id;
+        this.password = password;
     }
 
-    public User(String amina, LocalDate localDate, String email) {
+    public User(String amina, LocalDate localDate, String email, String password) {
     }
 
 
@@ -47,6 +49,14 @@ public class User implements Idable{
 
     public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     @Override
