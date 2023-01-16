@@ -20,6 +20,10 @@ public class UserManager {
             throw new HotelException("User has to be adult");
         }
 
+         if(user.getPassword().length() < 8 && (!user.getPassword().contains("&") || !user.getPassword().contains("%"))){
+            throw new HotelException("Password has do be 8 characters long and contain & or %");
+        }
+
         try{
             return DaoFactory.usersDao().add(user);
         }catch (HotelException e){
@@ -28,6 +32,8 @@ public class UserManager {
             }
             throw e;
         }
+
+
     }
 
 }
