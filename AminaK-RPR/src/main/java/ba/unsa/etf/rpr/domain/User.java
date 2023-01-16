@@ -74,7 +74,8 @@ public class User implements Idable{
         return "Customer: " + this.name+
                 "Email: " + this.email+
                 "Birthdate: "+ this.birth_date+
-                "ID: " + this.id;
+                "ID: " + this.id+
+                "password" + this.password;
     }
 
     @Override

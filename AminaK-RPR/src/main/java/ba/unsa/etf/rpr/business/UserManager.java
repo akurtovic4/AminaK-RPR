@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.business;
 import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.dao.UserDao;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
@@ -27,12 +28,24 @@ public class UserManager {
         try{
             return DaoFactory.usersDao().add(user);
         }catch (HotelException e){
-            if (e.getMessage().contains("UQ_NAME")){
-                throw new HotelException("Category with same name exists");
+            if (e.getMessage().contains("email")){
+                throw new HotelException("User with same name exists");
             }
             throw e;
         }
 
+
+
+
+    }
+
+    public User login(String email, String password) throws HotelException {
+        User u = DaoFactory.usersDao().getByEmail(email);
+
+        if(!u.getPassword().equals(password)){
+            throw new HotelException("Password incorrect");
+        }
+        return u;
 
     }
 
