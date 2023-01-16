@@ -1,0 +1,1 @@
+java --module-path /Users/aminakurtovic/Desktop/fax_3/javafx/javafx-sdk-19/lib --add-modules javafx.fxml,javafx.controls -jar target/AminaK-RPR-gui-jar-with-dependencies.jar

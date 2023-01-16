@@ -3,7 +3,7 @@ package ba.unsa.etf.rpr.dao;
 public class DaoFactory {
 
     private static final ReservationsDao reservationsDao = new ReservationsDaoSQLImpl();
-    private static final UsersDao usersDao = new UsersDaoSQLImpl();
+    private static final UserDao usersDao = new UserDaoSQLImpl();
     private static final RoomsDao roomsDao = new RoomsDaoSQLImpl();
 
    private DaoFactory(){
@@ -13,7 +13,7 @@ public class DaoFactory {
         return reservationsDao;
     }
 
-    public static UsersDao usersDao(){
+    public static UserDao usersDao(){
         return usersDao;
     }
 

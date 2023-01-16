@@ -25,7 +25,7 @@ public class App
         dino.setId(2);
         dino.setEmail("dkecotralala");
         dino.setBirth_date(LocalDate.of(1988, 01, 27));
-        UsersDao dao = new UsersDaoSQLImpl();
+        UserDao dao = new UserDaoSQLImpl();
        // dao.add(dino);
 
         Room soba = new Room();

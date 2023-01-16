@@ -3,15 +3,14 @@ package ba.unsa.etf.rpr.dao;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class UsersDaoSQLImpl extends AbstractDao<User> implements UsersDao{
-    public UsersDaoSQLImpl() {
+public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
+    public UserDaoSQLImpl() {
         super("users");
     }
 
