@@ -21,6 +21,9 @@ public class HomeController {
 
     public void showRegister(ActionEvent event){
         try {
+
+            Stage scenica = (Stage) btnExplore.getScene().getWindow();
+            scenica.close();
             System.out.printf("registruj se");
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/register.fxml"));

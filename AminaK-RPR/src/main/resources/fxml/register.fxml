@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="registerGridPane" prefHeight="380.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane fx:id="registerGridPane" prefHeight="380.0" prefWidth="327.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
     <stylesheets>
         <URL value="@/css/register.css" />
     </stylesheets>
@@ -106,8 +106,8 @@
       </VBox>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
         <buttons>
-          <Button mnemonicParsing="false" text="Back" />
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#userRegister" text="Register" />
+          <Button fx:id="btnBack" mnemonicParsing="false" onAction="#goBackToHome" text="Back" />
+            <Button fx:id="btnRegister2" defaultButton="true" mnemonicParsing="false" onAction="#userRegister" text="Register" />
         </buttons>
          <GridPane.margin>
             <Insets right="5.0" />
