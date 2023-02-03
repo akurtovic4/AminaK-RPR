@@ -16,6 +16,8 @@ public class HomeController {
 
 
     public Button btnExplore;
+    public Button btnRegister;
+    public Button btnLogin;
 
     public void showRegister(ActionEvent event){
         try {
@@ -39,7 +41,8 @@ public class HomeController {
     public void showExplore(ActionEvent event){
         try {
             System.out.printf("istrazi");
-
+            Stage pozornica = (Stage) btnExplore.getScene().getWindow();
+            pozornica.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/explore.fxml"));
             fxmlLoader.setController(new ExploreController());
             Parent root = fxmlLoader.load();
