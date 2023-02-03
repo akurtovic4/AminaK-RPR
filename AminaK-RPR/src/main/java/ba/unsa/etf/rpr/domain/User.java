@@ -1,9 +1,10 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class User implements Idable{
+public class User implements Idable, Serializable {
 
     private int id;
     private String name;
@@ -18,9 +19,6 @@ public class User implements Idable{
         this.birth_date = birth_date;
         this.id = id;
         this.password = password;
-    }
-
-    public User(String amina, LocalDate localDate, String email, String password) {
     }
 
 
@@ -91,6 +89,7 @@ public class User implements Idable{
         return Objects.hash(id, name, email, birth_date);
     }
 }
+
 
 
 

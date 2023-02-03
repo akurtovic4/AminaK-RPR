@@ -1,8 +1,9 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Room implements Idable{
+public class Room implements Idable, Serializable {
 
     private int id;
     private Float price;

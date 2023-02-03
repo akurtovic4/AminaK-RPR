@@ -7,8 +7,11 @@ import java.sql.*;
 import java.util.*;
 
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
+    /**
+     * singelton pattern
+     */
 
-    private Connection connection;
+    private Connection connection = null;
     private String tableName;
 
     public AbstractDao(String tableName) {

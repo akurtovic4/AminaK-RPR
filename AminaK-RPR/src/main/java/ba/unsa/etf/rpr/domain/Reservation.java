@@ -1,10 +1,11 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
-public class Reservation implements Idable{
+public class Reservation implements Idable, Serializable {
 
     private int id;
     private LocalDate start;
