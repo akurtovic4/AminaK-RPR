@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fxml.Reserve"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="38.0" layoutY="52.0" prefHeight="17.0" prefWidth="83.0" text="Room for:" />
+      <Label layoutX="38.0" layoutY="90.0" prefWidth="29.0" text="Date:" />
+      <DatePicker layoutX="121.0" layoutY="86.0" />
+      <Group layoutX="167.0" layoutY="51.0" />
+      <ListView layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="280.0" layoutY="350.0" mnemonicParsing="false" text="Reserve" />
+      <Button layoutX="427.0" layoutY="350.0" mnemonicParsing="false" text="Back" />
+      <Label layoutX="280.0" layoutY="304.0" text="Price:" />
+      <Label layoutX="347.0" layoutY="192.0" />
+      <Group layoutX="133.0" layoutY="52.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="one">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </RadioButton>
+            <RadioButton layoutX="59.0" mnemonicParsing="false" text="two" />
+            <RadioButton layoutX="113.0" mnemonicParsing="false" text="three" />
+            <RadioButton layoutX="173.0" mnemonicParsing="false" text="four" />
+         </children>
+      </Group>
+      <Label layoutX="38.0" layoutY="135.0" text="For:" />
+      <TextField layoutX="121.0" layoutY="131.0" promptText="nights" />
+      <Label layoutX="38.0" layoutY="14.0" text="Make a reservation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

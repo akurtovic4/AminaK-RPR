@@ -28,5 +28,6 @@
          </font>
       </Label>
       <Label layoutX="39.0" layoutY="95.0" text="Your reservations" />
+      <Button fx:id="btnMakeReservation" layoutX="315.0" layoutY="21.0" mnemonicParsing="false" onAction="#showReservationWindow" text="Make a reservation" />
    </children>
 </AnchorPane>

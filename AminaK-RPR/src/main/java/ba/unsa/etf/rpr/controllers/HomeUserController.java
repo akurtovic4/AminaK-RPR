@@ -12,6 +12,7 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class HomeUserController {
     public Button btnEditProfile;
     public Button btnLogOut;
+    public Button btnMakeReservation;
 
     public void showEditWindow(ActionEvent actionEvent) {
         try{
@@ -45,5 +46,8 @@ public class HomeUserController {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void showReservationWindow(ActionEvent actionEvent) {
     }
 }
