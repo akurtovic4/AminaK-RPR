@@ -58,7 +58,6 @@ public class RegisterController {
             fxmlLoader.setController(new HomeController());
             Parent root = fxmlLoader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-
             stage.setResizable(false);
             stage.show();
         }
