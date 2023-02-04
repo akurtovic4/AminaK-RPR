@@ -26,13 +26,16 @@ public class LoginController {
 
     public void showHomeUser(ActionEvent event){
         try {
+
+
             System.out.printf("homeuser");
-            Stage stage1 = (Stage) btnLoginBack.getScene().getWindow();
-            stage1.close();
+
             u.setPassword(passwordFld.getText());
             u.setEmail(emailFld.getText());
             u = DaoFactory.usersDao().getByEmail(u.getEmail());
             (new UserManager()).login(u.getEmail(), u.getPassword());
+            Stage stage1 = (Stage) btnLoginBack.getScene().getWindow();
+            stage1.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
             fxmlLoader.setController(new HomeUserController(u));
             Parent root = fxmlLoader.load();
@@ -45,6 +48,7 @@ public class LoginController {
 
         }catch (Exception e){
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
 
         }
     }
