@@ -32,12 +32,14 @@ public class LoginController {
 
             u.setPassword(passwordFld.getText());
             u.setEmail(emailFld.getText());
-            u = DaoFactory.usersDao().getByEmail(u.getEmail());
+            System.out.println("tralala" +u.getPassword());
             (new UserManager()).login(u.getEmail(), u.getPassword());
             Stage stage1 = (Stage) btnLoginBack.getScene().getWindow();
             stage1.close();
+            System.out.println(u);
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
-            fxmlLoader.setController(new HomeUserController(u));
+            User user = DaoFactory.usersDao().getByEmail(u.getEmail());
+            fxmlLoader.setController(new HomeUserController(user));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("HomeUser");

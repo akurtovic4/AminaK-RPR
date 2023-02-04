@@ -49,7 +49,7 @@ public class UserManager {
 
     public User login(String email, String password) throws HotelException {
 
-        if(email == null || password==null){
+        if(email == null || password.equals("")){
             throw new HotelException("All fields have to be filled");
         }
         User u = DaoFactory.usersDao().getByEmail(email);
