@@ -7,39 +7,42 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.MakeReservationController">
    <children>
       <Label layoutX="38.0" layoutY="52.0" prefHeight="17.0" prefWidth="83.0" text="Room for:" />
-      <Label layoutX="38.0" layoutY="90.0" prefWidth="29.0" text="Date:" />
-      <DatePicker layoutX="121.0" layoutY="86.0" />
+      <Label layoutX="38.0" layoutY="90.0" prefHeight="17.0" prefWidth="72.0" text="Start date:" />
+      <DatePicker fx:id="dpStart" layoutX="121.0" layoutY="86.0" />
       <Group layoutX="167.0" layoutY="51.0" />
-      <ListView layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="reservationList" layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="btnReserve" layoutX="280.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnMakeReservation" text="Reserve" />
       <Button fx:id="btnGoBackUser" layoutX="427.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackToHome" text="Back" />
       <Label layoutX="280.0" layoutY="304.0" text="Price:" />
       <Label layoutX="347.0" layoutY="192.0" />
       <Group layoutX="133.0" layoutY="52.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="one">
+            <RadioButton fx:id="radiobtnOne" mnemonicParsing="false" selected="true" text="one">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGroup" />
+               </toggleGroup>
             </RadioButton>
-            <RadioButton layoutX="59.0" mnemonicParsing="false" text="two" />
-            <RadioButton layoutX="113.0" mnemonicParsing="false" text="three" />
-            <RadioButton layoutX="173.0" mnemonicParsing="false" text="four" />
+            <RadioButton fx:id="radiobtnTwo" layoutX="59.0" mnemonicParsing="false" text="two" toggleGroup="$toggleGroup" />
+            <RadioButton fx:id="radiobtnThree" layoutX="113.0" mnemonicParsing="false" text="three" toggleGroup="$toggleGroup" />
+            <RadioButton fx:id="radiobtnFour" layoutX="173.0" mnemonicParsing="false" text="four" toggleGroup="$toggleGroup" />
          </children>
       </Group>
-      <Label layoutX="38.0" layoutY="135.0" text="For:" />
-      <TextField layoutX="121.0" layoutY="131.0" promptText="nights" />
       <Label layoutX="38.0" layoutY="14.0" text="Make a reservation">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <Label layoutX="38.0" layoutY="128.0" prefHeight="17.0" prefWidth="72.0" text="End date:" />
+      <DatePicker fx:id="dpEnd" layoutX="121.0" layoutY="124.0" />
    </children>
 </Pane>
