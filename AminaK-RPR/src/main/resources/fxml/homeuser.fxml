@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@/css/homeuser.css" />
     </stylesheets>
@@ -22,7 +22,7 @@
       <ListView editable="true" layoutX="39.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="btnEditProfile" layoutX="202.0" layoutY="21.0" mnemonicParsing="false" onAction="#showEditWindow" text="Edit profile" />
       <Button fx:id="btnLogOut" layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#showHome" text="Log out" />
-      <Label layoutX="39.0" layoutY="22.0" text="HELLO, ALMINA">
+      <Label fx:id="lblName" layoutX="39.0" layoutY="22.0" text="HELLO, ALMINA">
          <font>
             <Font size="18.0" />
          </font>

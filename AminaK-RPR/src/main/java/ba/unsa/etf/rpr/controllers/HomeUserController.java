@@ -1,10 +1,12 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.domain.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -12,7 +14,21 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 public class HomeUserController {
     public Button btnEditProfile;
     public Button btnLogOut;
+    public Label lblName;
     public Button btnMakeReservation;
+
+    private User user;
+
+    public HomeUserController() {
+    }
+
+    public HomeUserController(User u) {
+        user = u;
+    }
+
+    public void initialize(){
+        lblName.setText("Hello " + user.getName());
+    }
 
     public void showEditWindow(ActionEvent actionEvent) {
         try{

@@ -38,8 +38,15 @@ public class RegisterController {
             u.setBirth_date(datePickerID.getValue());
             u.setPassword(passwordFld.getText());
             userManager.add(u, confirmPasswordFld.getText());
-            Stage s = (Stage)registerGridPane.getScene().getWindow();
-            s.hide();
+            Stage stage = (Stage) btnBack.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
+            fxmlLoader.setController(new HomeUserController(u));
+            Parent root = fxmlLoader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
