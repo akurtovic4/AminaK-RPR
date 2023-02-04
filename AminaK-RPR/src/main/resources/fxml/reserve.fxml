@@ -11,16 +11,15 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Label layoutX="38.0" layoutY="52.0" prefHeight="17.0" prefWidth="83.0" text="Room for:" />
       <Label layoutX="38.0" layoutY="90.0" prefWidth="29.0" text="Date:" />
       <DatePicker layoutX="121.0" layoutY="86.0" />
       <Group layoutX="167.0" layoutY="51.0" />
       <ListView layoutX="33.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="280.0" layoutY="350.0" mnemonicParsing="false" text="Reserve" />
-      <Button layoutX="427.0" layoutY="350.0" mnemonicParsing="false" text="Back" />
+      <Button fx:id="btnReserve" layoutX="280.0" layoutY="350.0" mnemonicParsing="false" onAction="#btnMakeReservation" text="Reserve" />
+      <Button fx:id="btnGoBackUser" layoutX="427.0" layoutY="350.0" mnemonicParsing="false" onAction="#goBackToHome" text="Back" />
       <Label layoutX="280.0" layoutY="304.0" text="Price:" />
       <Label layoutX="347.0" layoutY="192.0" />
       <Group layoutX="133.0" layoutY="52.0">

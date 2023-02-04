@@ -20,8 +20,8 @@ public class EditProfileConstroller {
         try{
             Stage stage = (Stage) btnGoUserHome.getScene().getWindow();
             stage.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
-            fxmlLoader.setController(new HomeController());
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
+            fxmlLoader.setController(new HomeUserController());
             Parent root = fxmlLoader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);

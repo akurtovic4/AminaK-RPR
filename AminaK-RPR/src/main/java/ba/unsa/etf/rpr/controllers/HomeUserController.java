@@ -49,5 +49,19 @@ public class HomeUserController {
     }
 
     public void showReservationWindow(ActionEvent actionEvent) {
+
+        try{
+            Stage stage = (Stage) btnMakeReservation.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reserve.fxml"));
+            fxmlLoader.setController(new ReservationController());
+            Parent root = fxmlLoader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
