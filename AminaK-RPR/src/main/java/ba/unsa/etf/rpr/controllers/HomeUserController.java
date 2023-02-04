@@ -20,6 +20,7 @@ public class HomeUserController {
     private User user;
 
     public HomeUserController() {
+        user = new User();
     }
 
     public HomeUserController(User u) {

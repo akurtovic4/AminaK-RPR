@@ -36,6 +36,7 @@ public class RegisterController {
             u.setEmail(emailFld.getText());
             u.setName(nameFld.getText());
             u.setBirth_date(datePickerID.getValue());
+            System.out.println(u.getBirth_date());
             u.setPassword(passwordFld.getText());
             userManager.add(u, confirmPasswordFld.getText());
             Stage stage = (Stage) btnBack.getScene().getWindow();
