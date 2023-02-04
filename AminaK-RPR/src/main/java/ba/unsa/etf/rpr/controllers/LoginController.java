@@ -18,7 +18,8 @@ public class LoginController {
     public void showHomeUser(ActionEvent event){
         try {
             System.out.printf("homeuser");
-
+            Stage stage1 = (Stage) btnLoginBack.getScene().getWindow();
+            stage1.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
             fxmlLoader.setController(new HomeUserController());
             Parent root = fxmlLoader.load();
