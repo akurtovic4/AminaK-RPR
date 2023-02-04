@@ -4,12 +4,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class LoginController {
+
+    public Button btnOkey;
+    public Button btnLoginBack;
 
     public void showHomeUser(ActionEvent event){
         try {
@@ -31,6 +35,20 @@ public class LoginController {
     }
 
 
+    public void backToHome(ActionEvent actionEvent) {
 
-
+        try{
+            Stage stage = (Stage) btnLoginBack.getScene().getWindow();
+            stage.close();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+            fxmlLoader.setController(new HomeController());
+            Parent root = fxmlLoader.load();
+            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
+            stage.setResizable(false);
+            stage.show();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }

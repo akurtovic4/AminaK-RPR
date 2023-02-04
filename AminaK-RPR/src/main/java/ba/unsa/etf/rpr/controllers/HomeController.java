@@ -66,7 +66,8 @@ public class HomeController {
     public void showLogin(ActionEvent event){
         try {
             System.out.printf("login");
-
+            Stage pozornica1 = (Stage) btnLogin.getScene().getWindow();
+            pozornica1.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
             fxmlLoader.setController(new LoginController());
             Parent root = fxmlLoader.load();
