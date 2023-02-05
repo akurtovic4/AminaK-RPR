@@ -72,7 +72,7 @@ public class HomeUserController {
             Stage stage = (Stage) btnMakeReservation.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/reserve.fxml"));
-            fxmlLoader.setController(new ReservationController());
+            fxmlLoader.setController(new MakeReservationController());
             Parent root = fxmlLoader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);
