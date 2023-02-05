@@ -39,6 +39,7 @@ public class UserManager {
             if (e.getMessage().contains("email")){
                 throw new HotelException("User with same email exists");
             }
+            System.out.println("desilose");
             throw e;
         }
 

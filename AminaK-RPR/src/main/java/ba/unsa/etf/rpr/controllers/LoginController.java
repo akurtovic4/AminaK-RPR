@@ -25,11 +25,10 @@ public class LoginController {
     public Button btnLoginBack;
 
     public void showHomeUser(ActionEvent event){
+
+
         try {
-
-
             System.out.printf("homeuser");
-
             u.setPassword(passwordFld.getText());
             u.setEmail(emailFld.getText());
             System.out.println("tralala" +u.getPassword());
@@ -48,7 +47,8 @@ public class LoginController {
             stage.setResizable(false);
             stage.show();
 
-        }catch (Exception e){
+        }
+        catch (Exception e){
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
 
 

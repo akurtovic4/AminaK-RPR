@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.ReservationManager;
+import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.domain.RoomType;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.event.ActionEvent;
@@ -35,34 +37,44 @@ public class MakeReservationController {
 
     @FXML
     public void initialize() {
-        vrstaSobe=RoomType.SINGLE_ROOM.toString();
-        radiobtnOne.selectedProperty().addListener((obs, stara, nova)->{
+
+            vrstaSobe=RoomType.SINGLE_ROOM.toString();
+            radiobtnOne.selectedProperty().addListener((obs, stara, nova)->{
                 if(nova!=false) {
                     vrstaSobe = RoomType.SINGLE_ROOM.toString();
 
                 }
             });
-        radiobtnTwo.selectedProperty().addListener((obs, stara, nova)->{
-            if(nova!=false) {
-                vrstaSobe = RoomType.DOUBLE_ROOM.toString();
+            radiobtnTwo.selectedProperty().addListener((obs, stara, nova)->{
+                if(nova!=false) {
+                    vrstaSobe = RoomType.DOUBLE_ROOM.toString();
 
-            }
-        });
-        radiobtnThree.selectedProperty().addListener((obs, stara, nova)->{
-            if(nova != false) vrstaSobe = RoomType.TRIPLE_ROOM.toString();
-        });
-        radiobtnFour.selectedProperty().addListener((obs, stara, nova)->{
-            if(nova != false) vrstaSobe = RoomType.QUADRUPLE_ROOM.toString();
-        });
+                }
+            });
+            radiobtnThree.selectedProperty().addListener((obs, stara, nova)->{
+                if(nova != false) vrstaSobe = RoomType.TRIPLE_ROOM.toString();
+            });
+            radiobtnFour.selectedProperty().addListener((obs, stara, nova)->{
+                if(nova != false) vrstaSobe = RoomType.QUADRUPLE_ROOM.toString();
+            });
 
-        dpStart.valueProperty().addListener((obs, stara, nova)->{
-            startDate=dpStart.getValue();
+            dpStart.valueProperty().addListener((obs, stara, nova)->{
+                startDate=dpStart.getValue();
+                System.out.println(startDate);
 
-        });
-        dpEnd.valueProperty().addListener((obs, stara, nova)->{
-            endDate=dpEnd.getValue();
-        });
-        endDate = dpEnd.getValue();
+            });
+
+            dpEnd.valueProperty().addListener((obs, stara, nova)->{
+                endDate=dpEnd.getValue();
+                System.out.println(endDate);
+            });
+
+
+
+
+
+
+
     }
 
 
@@ -72,7 +84,14 @@ public class MakeReservationController {
 
 
     public void btnMakeReservation(ActionEvent actionEvent) {
-        System.out.println("vrsta sobe: " + vrstaSobe + " start date: " + startDate + " end date: "+ endDate);
+        try {
+            (new ReservationManager()).isTimeValid(startDate,endDate);
+            System.out.println(startDate);
+            System.out.println("vrsta sobe: " + vrstaSobe + " start date: " + startDate + " end date: "+ endDate);
+        } catch (HotelException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+
 
     }
 
