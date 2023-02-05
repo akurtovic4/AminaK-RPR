@@ -28,6 +28,7 @@ public class HomeUserController {
     }
 
     public void initialize(){
+
         lblName.setText("Hello " + user.getName());
     }
 
