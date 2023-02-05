@@ -1,10 +1,15 @@
 package ba.unsa.etf.rpr.dao;
 
 import ba.unsa.etf.rpr.domain.Reservation;
+import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -40,4 +45,31 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         item.put("comments", object.getComments());
         return item;
     }
+
+
+    public List<Room> reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException {
+
+        List<Room> rooms = new ArrayList<>();
+        String query = "SELECT * FROM reservations WHERE start >= ? AND end <= ?";
+
+        try {
+
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            //parametar index ?, vrijednost
+            stmt.setDate(1, Date.valueOf(startDate));
+            stmt.setDate(2, Date.valueOf(endDate));
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Reservation result = row2object(rs);
+                rooms.add(result.getRoom());
+
+            }
+            rs.close();
+        } catch (Exception e) {
+            throw new HotelException(e.getMessage(), e);
+        }
+
+        return rooms;
+    }
+
 }

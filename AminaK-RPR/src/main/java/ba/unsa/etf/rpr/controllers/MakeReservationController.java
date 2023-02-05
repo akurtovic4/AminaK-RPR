@@ -2,7 +2,11 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.ReservationManager;
 import ba.unsa.etf.rpr.business.UserManager;
+import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.domain.Reservation;
+import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.RoomType;
+import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +19,7 @@ import net.bytebuddy.asm.Advice;
 
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -33,6 +38,14 @@ public class MakeReservationController {
     private String vrstaSobe;
     private LocalDate startDate;
     private LocalDate endDate;
+
+    private ReservationManager reservationManager = new ReservationManager();
+
+    private User user;
+
+    public MakeReservationController(User user) {
+        this.user = user;
+    }
 
 
     @FXML
@@ -69,12 +82,6 @@ public class MakeReservationController {
                 System.out.println(endDate);
             });
 
-
-
-
-
-
-
     }
 
 
@@ -86,8 +93,27 @@ public class MakeReservationController {
     public void btnMakeReservation(ActionEvent actionEvent) {
         try {
             (new ReservationManager()).isTimeValid(startDate,endDate);
-            System.out.println(startDate);
-            System.out.println("vrsta sobe: " + vrstaSobe + " start date: " + startDate + " end date: "+ endDate);
+            List<Room> listOfAllRoomsThatCanWork =  DaoFactory.roomsDao().allRoomsThatCanWork(vrstaSobe);
+            List<Room> listOfTakenRooms = DaoFactory.reservationsDao().reservedRooms(startDate,endDate);
+            for(int i = 0; i < listOfAllRoomsThatCanWork.size(); i++){
+               if(!listOfTakenRooms.contains(listOfAllRoomsThatCanWork.get(i))){
+                   Reservation reservation = new Reservation();
+                   reservation.setId(1);
+                   reservation.setUser(user);
+                   reservation.setStart(startDate);
+                   reservation.setEnd(endDate);
+                   reservation.setComments("");
+                   reservation.setRoom(listOfAllRoomsThatCanWork.get(i));
+
+                   reservationManager.add(reservation);
+
+                }
+
+
+
+            }
+
+
         } catch (HotelException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }

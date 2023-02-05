@@ -1,10 +1,12 @@
 package ba.unsa.etf.rpr.dao;
 
+import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.RoomType;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -51,33 +53,32 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
         return item;
     }
 
+    public List<Room> allRoomsThatCanWork(String roomType) throws HotelException {
 
+        List<Room> roomsThatCanWork = new ArrayList<>();
+        String query = "SELECT * FROM rooms WHERE type = ?";
 
-    public void reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException {
-
-        List<Room> sobe = new ArrayList<>();
-        String query = "SELECT * FROM rooms WHERE start_date >= startDate AND end_date <= endDate";
-/*
-        try{
-
+        try {
             PreparedStatement stmt = getConnection().prepareStatement(query);
-            stmt.setString(1, email);
+            //parametar index ?, vrijednost
+            stmt.setString(1, roomType);
             ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-               Room result = row2object(rs);
-                rs.close();
-                sobe.add(result)
-              return sobe;
-            } else {
-                throw new HotelException("Room not found");
+            while (rs.next()) {
+                Room result = row2object(rs);
+                roomsThatCanWork.add(result);
+
             }
-        }
-        catch (HotelException e) {
+            rs.close();
+        } catch (Exception e) {
             throw new HotelException(e.getMessage(), e);
         }
-    }*/
 
+        return roomsThatCanWork;
     }
+
+
+
+
 
 
 }
