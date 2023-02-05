@@ -39,13 +39,13 @@ public class MakeReservationController {
         radiobtnOne.selectedProperty().addListener((obs, stara, nova)->{
                 if(nova!=false) {
                     vrstaSobe = RoomType.SINGLE_ROOM.toString();
-                    System.out.println("selektovan je prvi: " + radiobtnOne.isSelected());
+
                 }
             });
         radiobtnTwo.selectedProperty().addListener((obs, stara, nova)->{
             if(nova!=false) {
                 vrstaSobe = RoomType.DOUBLE_ROOM.toString();
-                System.out.println("selektovan je drugi: " + radiobtnTwo.isSelected());
+
             }
         });
         radiobtnThree.selectedProperty().addListener((obs, stara, nova)->{
@@ -57,7 +57,7 @@ public class MakeReservationController {
 
         dpStart.valueProperty().addListener((obs, stara, nova)->{
             startDate=dpStart.getValue();
-            System.out.println("pocetni datum je: "+startDate);
+
         });
         dpEnd.valueProperty().addListener((obs, stara, nova)->{
             endDate=dpEnd.getValue();
