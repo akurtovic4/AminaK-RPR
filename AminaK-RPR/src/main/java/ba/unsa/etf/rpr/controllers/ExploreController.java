@@ -42,7 +42,11 @@ public class ExploreController {
         }
     }
 
-
+    /**
+     *
+     * @param actionEvent
+     * This method shows Hotel home page when user presses back button
+     */
     public void showHomePage(ActionEvent actionEvent) {
 
         try{
