@@ -25,6 +25,7 @@ public class HomeUserController {
     public Label lblName;
     public Button btnMakeReservation;
     public ListView listView;
+    public Button btnCancelReservation;
 
     private User user;
 
@@ -108,5 +109,8 @@ public class HomeUserController {
         catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void cancelReservation(ActionEvent actionEvent) {
     }
 }
