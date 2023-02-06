@@ -13,7 +13,14 @@ import java.time.Period;
 public class UserManager {
 
 
-
+    /**
+     *
+     * @param user
+     * @param confirmPasswordText
+     * @return
+     * @throws HotelException
+     * This method adds user only if his username and password are correct
+     */
     public User add(User user, String confirmPasswordText) throws HotelException {
 
         if (user.getName().equals(null) || user.getPassword().equals(null) || user.getEmail().equals(null) || user.getBirth_date()==null || confirmPasswordText.equals(null)){
@@ -27,7 +34,7 @@ public class UserManager {
         if (intervalPeriod.getYears() < 18){
             throw new HotelException("User has to be adult");
         }
-//greska
+
          if(user.getPassword().length() < 8 && (!user.getPassword().contains("&") || !user.getPassword().contains("%"))){
             throw new HotelException("Password has do be 8 characters long and contain & or %");
         }
@@ -50,6 +57,15 @@ public class UserManager {
 
 
     }
+
+    /**
+     *
+     * @param email
+     * @param password
+     * @return
+     * @throws HotelException
+     * This method logs user in only if all fields are filled and username and password are correct
+     */
 
     public User login(String email, String password) throws HotelException {
 
