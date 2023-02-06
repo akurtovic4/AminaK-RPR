@@ -49,6 +49,12 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
         }
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     * Method that turns objects to data for database
+     */
     @Override
     public Map<String, Object> object2row(Room object) {
 
