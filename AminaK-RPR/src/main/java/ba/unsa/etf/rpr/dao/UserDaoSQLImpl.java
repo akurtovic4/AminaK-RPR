@@ -24,7 +24,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
      * @throws HotelException
      * @throws SQLException
      *
-     * Method for making data form database to objects
+     * Method for turning data form database to objects
      */
     @Override
     public User row2object(ResultSet rs) throws HotelException, SQLException {
@@ -43,7 +43,14 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
     }
 
 
-
+    /**
+     *
+     * @param email
+     * @return
+     * @throws HotelException
+     *
+     * Method returns user with specific email
+     */
     public User getByEmail(String email) throws HotelException{
 
         String query = "SELECT * FROM  users  WHERE email = ?";
