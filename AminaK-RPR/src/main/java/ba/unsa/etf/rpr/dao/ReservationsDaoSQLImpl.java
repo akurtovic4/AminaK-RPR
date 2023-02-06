@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * implements every method from Dao<T> plus methods from ReservationDao
+ */
 public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements ReservationsDao{
     public ReservationsDaoSQLImpl() {
         super("reservations");
