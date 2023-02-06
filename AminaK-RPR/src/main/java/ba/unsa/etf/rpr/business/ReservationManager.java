@@ -23,6 +23,14 @@ public class ReservationManager {
         if(endDate.isBefore(startDate))  throw new HotelException("Start date must be before end date");
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     * @throws HotelException
+     *
+     * Method for adding reservations in databse using DaoFactory
+     */
     public Reservation add(Reservation item) throws HotelException{
         return DaoFactory.reservationsDao().add(item);
     }
