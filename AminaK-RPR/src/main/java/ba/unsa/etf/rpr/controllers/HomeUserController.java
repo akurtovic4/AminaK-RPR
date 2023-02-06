@@ -7,6 +7,7 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -55,6 +56,8 @@ public class HomeUserController {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+
 
 
 
@@ -112,5 +115,24 @@ public class HomeUserController {
     }
 
     public void cancelReservation(ActionEvent actionEvent) {
+
+       btnCancelReservation.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent event) {
+                final int selectedIdx = listView.getSelectionModel().getSelectedIndex();
+                if (selectedIdx != -1) {
+                    Object itemToRemove = listView.getSelectionModel().getSelectedItem();
+
+                    final int newSelectedIdx =
+                            (selectedIdx == listView.getItems().size() - 1)
+                                    ? selectedIdx - 1
+                                    : selectedIdx;
+
+                    listView.getItems().remove(selectedIdx);
+
+                    listView.getSelectionModel().select(newSelectedIdx);
+                }
+            }
+        });
+
     }
 }
