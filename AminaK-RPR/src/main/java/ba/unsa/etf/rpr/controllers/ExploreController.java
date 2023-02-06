@@ -18,6 +18,11 @@ public class ExploreController {
 
     public Button btnBackToHomepage;
 
+    /**
+     *
+     * @param event
+     * Method that shows register window when user presses Register button
+     */
     public void showRegister(ActionEvent event){
         try {
             System.out.printf("registruj se");
