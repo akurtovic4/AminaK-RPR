@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-
+/**
+ * This is controller that handles explore window where user can see pictures od hotel rooms
+ */
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class ExploreController {
