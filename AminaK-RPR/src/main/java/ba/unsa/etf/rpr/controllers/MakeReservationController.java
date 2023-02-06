@@ -21,6 +21,7 @@ import net.bytebuddy.asm.Advice;
 
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -59,6 +60,7 @@ public class MakeReservationController {
                 if(nova!=false) {
                     vrstaSobe = RoomType.SINGLE_ROOM.toString();
 
+
                 }
             });
             radiobtnTwo.selectedProperty().addListener((obs, stara, nova)->{
@@ -69,6 +71,7 @@ public class MakeReservationController {
             });
             radiobtnThree.selectedProperty().addListener((obs, stara, nova)->{
                 if(nova != false) vrstaSobe = RoomType.TRIPLE_ROOM.toString();
+
             });
             radiobtnFour.selectedProperty().addListener((obs, stara, nova)->{
                 if(nova != false) vrstaSobe = RoomType.QUADRUPLE_ROOM.toString();
@@ -83,7 +86,23 @@ public class MakeReservationController {
             dpEnd.valueProperty().addListener((obs, stara, nova)->{
                 endDate=dpEnd.getValue();
                 System.out.println(endDate);
+
+                long numberOfDays = ChronoUnit.DAYS.between(startDate, endDate);
+                int numberOfDays1 = (int)numberOfDays;
+
+                if(vrstaSobe == "SINGLE_ROOM")
+                    labelForPrice.setText("" + numberOfDays1 * 5 + "$");
+
+                if(vrstaSobe == "DOUBLE_ROOM")
+                    labelForPrice.setText("" + numberOfDays1 * 10 + "$");
+
+                if(vrstaSobe == "TRIPLE_ROOM")
+                    labelForPrice.setText("" + numberOfDays1 * 15 + "$");
+
+                if(vrstaSobe == "QUADRUPLE_ROOM")
+                    labelForPrice.setText("" + numberOfDays1 * 20 + "$");
             });
+
 
 
 
