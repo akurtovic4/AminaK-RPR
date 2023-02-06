@@ -66,6 +66,15 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
         return item;
     }
 
+    /**
+     *
+     * @param roomType
+     * @return
+     * @throws HotelException
+     *
+     * Method that takes all room with specific room type passed as parameter and puts them in a List
+     */
+
     public List<Room> allRoomsThatCanWork(String roomType) throws HotelException {
 
         List<Room> roomsThatCanWork = new ArrayList<>();
