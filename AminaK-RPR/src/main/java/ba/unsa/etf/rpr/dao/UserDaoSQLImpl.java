@@ -17,6 +17,15 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
         super("users");
     }
 
+    /**
+     *
+     * @param rs
+     * @return
+     * @throws HotelException
+     * @throws SQLException
+     *
+     * Method for making data form database to objects
+     */
     @Override
     public User row2object(ResultSet rs) throws HotelException, SQLException {
         User user = new User();
@@ -32,6 +41,7 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
             throw new HotelException(e.getMessage());
         }
     }
+
 
 
     public User getByEmail(String email) throws HotelException{
