@@ -47,6 +47,12 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         }
     }
 
+    /**
+     *
+     * @param object
+     * @return
+     * Method that turns objects to data for database
+     */
     @Override
     public Map<String, Object> object2row(Reservation object) {
         Map<String, Object> item = new TreeMap<String, Object>();
