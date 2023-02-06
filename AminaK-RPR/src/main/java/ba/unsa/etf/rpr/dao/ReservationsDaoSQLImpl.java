@@ -66,7 +66,15 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         return item;
     }
 
-
+    /**
+     *
+     * @param startDate
+     * @param endDate
+     * @return
+     * @throws HotelException
+     *
+     * Method that takes all rooms form database according to start and end date
+     */
     public List<Room> reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException {
 
         List<Room> rooms = new ArrayList<>();
