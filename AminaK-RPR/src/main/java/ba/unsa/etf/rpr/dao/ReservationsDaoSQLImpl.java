@@ -21,6 +21,13 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         super("reservations");
     }
 
+    /**
+     *
+     * @param rs
+     * @return
+     * @throws HotelException
+     * Method that turns data from database to objects
+     */
     @Override
     public Reservation row2object(ResultSet rs) throws HotelException {
         try {
