@@ -25,9 +25,13 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
     }
 
 
-
-
-
+    /**
+     *
+     * @param rs
+     * @return
+     * @throws HotelException
+     * Method that turns data from database to objects
+     */
 
 
     @Override
