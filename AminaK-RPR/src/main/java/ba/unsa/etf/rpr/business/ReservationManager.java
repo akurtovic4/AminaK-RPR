@@ -6,6 +6,9 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
 
 import java.time.LocalDate;
 
+/**
+ * This class represents business layer for Reservations. Here are methods that check all actions connected with making reservation
+ */
 public class ReservationManager {
 
     public void isTimeValid(LocalDate startDate, LocalDate endDate) throws HotelException {
