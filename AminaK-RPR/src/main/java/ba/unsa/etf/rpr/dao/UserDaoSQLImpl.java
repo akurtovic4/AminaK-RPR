@@ -10,6 +10,9 @@ import java.time.LocalDate;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * implements every method from Dao<T> plus methods from UserDao, extends AbstractDao
+ */
 public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
 
 
