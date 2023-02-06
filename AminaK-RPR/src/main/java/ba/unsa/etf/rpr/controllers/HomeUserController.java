@@ -1,12 +1,15 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.domain.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
@@ -16,6 +19,7 @@ public class HomeUserController {
     public Button btnLogOut;
     public Label lblName;
     public Button btnMakeReservation;
+    public ListView listView;
 
     private User user;
 
@@ -30,6 +34,10 @@ public class HomeUserController {
     public void initialize(){
 
         lblName.setText("Hello " + user.getName());
+
+        ObservableList items = FXCollections.observableArrayList();
+        items.addAll("Item 1", "Item 2", "Item 3");
+        listView.setItems(items);
     }
 
     public void showEditWindow(ActionEvent actionEvent) {

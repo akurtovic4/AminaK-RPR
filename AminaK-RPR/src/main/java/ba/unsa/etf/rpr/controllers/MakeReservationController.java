@@ -8,6 +8,8 @@ import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.RoomType;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +36,7 @@ public class MakeReservationController {
     public RadioButton radiobtnThree;
     public RadioButton radiobtnFour;
     public DatePicker dpEnd;
+    public Label labelForPrice;
 
     private String vrstaSobe;
     private LocalDate startDate;
@@ -82,6 +85,8 @@ public class MakeReservationController {
                 System.out.println(endDate);
             });
 
+
+
     }
 
 
@@ -121,13 +126,15 @@ public class MakeReservationController {
 
     }
 
+
+
     public void goBackToHome(ActionEvent actionEvent) {
 
         try{
             Stage stage = (Stage) btnReserve.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/homeuser.fxml"));
-            fxmlLoader.setController(new HomeUserController());
+            fxmlLoader.setController(new HomeUserController(user));
             Parent root = fxmlLoader.load();
             stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
             stage.setResizable(false);

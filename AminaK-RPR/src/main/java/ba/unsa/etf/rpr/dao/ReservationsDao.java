@@ -10,4 +10,5 @@ import java.util.List;
 public interface ReservationsDao extends Dao<Reservation> {
 
     public List<Room> reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException;
+    public  List<Reservation> reservationsForUser(int userId) throws HotelException;
 }

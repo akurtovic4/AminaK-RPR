@@ -72,4 +72,26 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         return rooms;
     }
 
+
+    public  List<Reservation> reservationsForUser(int userId) throws HotelException {
+        List<Reservation> reservationsForUser = new ArrayList<>();
+        String query = "SELECT * FROM reservation WHERE user_id = ?";
+        try{
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setInt(1,userId);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                Reservation result = row2object(rs);
+                reservationsForUser.add(result);
+            }
+
+        }
+        catch (Exception e) {
+            throw new HotelException(e.getMessage(), e);
+        }
+
+        return reservationsForUser;
+
+    }
+
 }

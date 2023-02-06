@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" >
     <stylesheets>
         <URL value="@/css/homeuser.css" />
     </stylesheets>
@@ -19,7 +16,7 @@
             <Image url="@../../../../../../download.png" />
          </image>
       </ImageView>
-      <ListView editable="true" layoutX="39.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="listView" editable="true" layoutX="39.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
       <Button fx:id="btnEditProfile" layoutX="202.0" layoutY="21.0" mnemonicParsing="false" onAction="#showEditWindow" text="Edit profile" />
       <Button fx:id="btnLogOut" layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#showHome" text="Log out" />
       <Label fx:id="lblName" layoutX="39.0" layoutY="22.0" text="HELLO, ALMINA">
