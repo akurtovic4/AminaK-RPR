@@ -27,7 +27,7 @@ public class UserManager {
         if (intervalPeriod.getYears() < 18){
             throw new HotelException("User has to be adult");
         }
-
+//greska
          if(user.getPassword().length() < 8 && (!user.getPassword().contains("&") || !user.getPassword().contains("%"))){
             throw new HotelException("Password has do be 8 characters long and contain & or %");
         }
