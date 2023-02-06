@@ -101,6 +101,13 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         return rooms;
     }
 
+    /**
+     *
+     * @param userId
+     * @return
+     * @throws HotelException
+     * Method that takdes all reservations for one user
+     */
 
     public  List<Reservation> reservationsForUser(int userId) throws HotelException {
         List<Reservation> reservationsForUser = new ArrayList<>();
