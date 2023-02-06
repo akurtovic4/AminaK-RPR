@@ -43,6 +43,7 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
         item.put("user_id", object.getUser().getId());
         item.put("room_id", object.getRoom().getId());
         item.put("comments", object.getComments());
+
         return item;
     }
 
@@ -58,6 +59,7 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
             //parametar index ?, vrijednost
             stmt.setDate(1, Date.valueOf(startDate));
             stmt.setDate(2, Date.valueOf(endDate));
+
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 Reservation result = row2object(rs);

@@ -1,6 +1,9 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.User;
+import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,6 +14,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
@@ -31,12 +36,13 @@ public class HomeUserController {
         user = u;
     }
 
-    public void initialize(){
+    public void initialize() throws HotelException {
 
         lblName.setText("Hello " + user.getName());
 
         ObservableList items = FXCollections.observableArrayList();
-        items.addAll("Item 1", "Item 2", "Item 3");
+        List<Reservation> reservationList = DaoFactory.reservationsDao().reservationsForUser(user.getId());
+        items.addAll(reservationList);
         listView.setItems(items);
     }
 
