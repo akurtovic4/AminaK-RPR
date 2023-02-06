@@ -41,7 +41,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
 
     public abstract Map<String, Object> object2row(T object);
 
-    /* implementacija metoda iz dao */
+
     public T getById(int id) throws HotelException {
         String query = "SELECT * FROM "+this.tableName+" WHERE id = ?";
         try {

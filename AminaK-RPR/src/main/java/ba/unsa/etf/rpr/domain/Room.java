@@ -3,6 +3,10 @@ package ba.unsa.etf.rpr.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Domain Javabean class Room with all attributes needed for room information such as id, price, floor and room type
+ * Also, setters and getters for each attribute
+ */
 public class Room implements Idable, Serializable {
 
     private int id;

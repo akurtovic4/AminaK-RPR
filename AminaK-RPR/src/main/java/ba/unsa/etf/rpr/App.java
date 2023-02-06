@@ -12,9 +12,7 @@ import java.time.LocalDate;
 
 /**
  * Hello world!
- *QUESTIONS:
- * da li domain clase moraju da budu imenovane u mnozini ili jednini
- * da li moramo koristiti singleton pattern i koji ce biti problemi ako ne koristimo
+
  */
 public class App 
 {

@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * Domain Javabean class User with all attributes needed for room information such as id, name, email, birthdate and password
+ * Also, setters and getters for each attribute
+ */
 public class User implements Idable, Serializable {
 
     private int id;

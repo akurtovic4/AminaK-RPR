@@ -5,6 +5,10 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Objects;
 
+/**
+ * Domain Javabean class Reservation with all attributes needed for reservation such as id, startDate, endDate, user who made reservation, and room that is reserved.
+ * Also, setters and getters for each attribute
+ */
 public class Reservation implements Idable, Serializable {
 
     private int id;
