@@ -30,12 +30,18 @@ public class HomeUserController {
 
     private User user;
 
+    private Reservation reservation;
+
     public HomeUserController() {
         user = new User();
     }
 
     public HomeUserController(User u) {
         user = u;
+    }
+
+    public HomeUserController(Reservation reservation) {
+        this.reservation = reservation;
     }
 
     public void initialize()  {
@@ -47,7 +53,7 @@ public class HomeUserController {
             List<Reservation> reservationList = DaoFactory.reservationsDao().reservationsForUser(user.getId());
             if(!reservationList.isEmpty()){
                 for(int i = 0; i < reservationList.size(); i++){
-                    items.add(reservationList.get(i).getStart() + " " + reservationList.get(i).getEnd());
+                    items.add(reservationList.get(i).getStart() + " " + reservationList.get(i).getEnd() + " " + reservationList.get(i).getId());
                 }
 
 
@@ -118,16 +124,28 @@ public class HomeUserController {
 
        btnCancelReservation.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent event) {
-                final int selectedIdx = listView.getSelectionModel().getSelectedIndex();
+                 int selectedIdx = listView.getSelectionModel().getSelectedIndex();
                 if (selectedIdx != -1) {
                     Object itemToRemove = listView.getSelectionModel().getSelectedItem();
 
-                    final int newSelectedIdx =
+                   int newSelectedIdx =
                             (selectedIdx == listView.getItems().size() - 1)
                                     ? selectedIdx - 1
                                     : selectedIdx;
 
                     listView.getItems().remove(selectedIdx);
+
+                    try {
+                        DaoFactory.reservationsDao().reservationsForUser(user.getId()).remove(itemToRemove);
+                        String [] index = itemToRemove.toString().split(" ");
+                        int indexToDelete = Integer.parseInt(index[2]);
+                        DaoFactory.reservationsDao().delete(indexToDelete);
+                        System.out.println(itemToRemove);
+
+                
+                    } catch (HotelException e) {
+                        throw new RuntimeException(e);
+                    }
 
                     listView.getSelectionModel().select(newSelectedIdx);
                 }
