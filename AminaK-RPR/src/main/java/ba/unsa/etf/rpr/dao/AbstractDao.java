@@ -18,6 +18,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     private Connection connection = null;
     private String tableName;
 
+    /**
+     *
+     * @param tableName
+     * Method for connection to database
+     */
     public AbstractDao(String tableName) {
         try{
             this.tableName = tableName;
