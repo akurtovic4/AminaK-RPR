@@ -122,8 +122,8 @@ public class HomeUserController {
 
     public void cancelReservation(ActionEvent actionEvent) {
 
-       btnCancelReservation.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent event) {
+      // btnCancelReservation.setOnAction(new EventHandler<ActionEvent>() {
+      //      @Override public void handle(ActionEvent event) {
                  int selectedIdx = listView.getSelectionModel().getSelectedIndex();
                 if (selectedIdx != -1) {
                     Object itemToRemove = listView.getSelectionModel().getSelectedItem();
@@ -146,11 +146,11 @@ public class HomeUserController {
                     } catch (HotelException e) {
                         throw new RuntimeException(e);
                     }
-
+                    listView.refresh();
                     listView.getSelectionModel().select(newSelectedIdx);
                 }
-            }
-        });
+         //   }
+    //    });
 
     }
 }

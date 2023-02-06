@@ -12,6 +12,9 @@ import javafx.stage.StageStyle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * This is controller that handles home window where user can log in, register
+ */
 public class HomeController {
 
 
