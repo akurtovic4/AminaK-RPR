@@ -100,7 +100,4 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
 
 
 
-
-
-
 }

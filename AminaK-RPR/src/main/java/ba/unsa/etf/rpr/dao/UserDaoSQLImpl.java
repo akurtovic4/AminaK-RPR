@@ -93,4 +93,6 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
         item.put("password", object.getPassword());
         return item;
     }
+
+
 }

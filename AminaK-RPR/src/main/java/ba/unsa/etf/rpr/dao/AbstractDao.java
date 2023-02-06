@@ -71,6 +71,27 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+
+    public T getByComment(String comment) throws HotelException {
+        String query = "SELECT * FROM "+this.tableName+" WHERE comments = ?";
+        try {
+            PreparedStatement stmt = this.connection.prepareStatement(query);
+            stmt.setString(1, comment);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                T result = row2object(rs);
+                rs.close();
+                return result;
+            } else {
+                throw new HotelException("Object not found");
+            }
+        } catch (SQLException e) {
+            throw new HotelException(e.getMessage(), e);
+        }
+    }
+
+
+
     public List<T> getAll() throws HotelException {
         String query = "SELECT * FROM "+ tableName;
         List<T> results = new ArrayList<T>();

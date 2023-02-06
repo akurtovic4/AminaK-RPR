@@ -29,7 +29,7 @@ public class ReservationManager {
      * @return
      * @throws HotelException
      *
-     * Method for adding reservations in databse using DaoFactory
+     * Method for adding reservations in database using DaoFactory
      */
     public Reservation add(Reservation item) throws HotelException{
         return DaoFactory.reservationsDao().add(item);

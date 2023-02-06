@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface Dao<T> {
 
-
+   T getByComment(String password) throws HotelException;
     /**
      * get entity from database base on ID
      * @param id primary key of entity
