@@ -4,6 +4,11 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
 
 import java.util.List;
 
+/**
+ *
+ * @param <T>
+ *     Dao interface extend by RoomsDao, ReservationDao, UsersDao
+ */
 public interface Dao<T> {
 
 
