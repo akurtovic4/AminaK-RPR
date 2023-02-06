@@ -7,6 +7,9 @@ import ba.unsa.etf.rpr.exceptions.HotelException;
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ *This class represents business layer for Users. Here are methods that check all actions connected with login and registration
+ */
 public class UserManager {
 
 
