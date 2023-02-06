@@ -36,14 +36,27 @@ public class HomeUserController {
         user = u;
     }
 
-    public void initialize() throws HotelException {
+    public void initialize()  {
 
         lblName.setText("Hello " + user.getName());
 
         ObservableList items = FXCollections.observableArrayList();
-        List<Reservation> reservationList = DaoFactory.reservationsDao().reservationsForUser(user.getId());
-        items.addAll(reservationList);
-        listView.setItems(items);
+        try{
+            List<Reservation> reservationList = DaoFactory.reservationsDao().reservationsForUser(user.getId());
+            if(!reservationList.isEmpty()){
+                for(int i = 0; i < reservationList.size(); i++){
+                    items.add(reservationList.get(i).getStart() + " " + reservationList.get(i).getEnd());
+                }
+
+
+                listView.setItems(items);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
     }
 
     public void showEditWindow(ActionEvent actionEvent) {

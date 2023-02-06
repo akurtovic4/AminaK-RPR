@@ -25,8 +25,11 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
             q.setId(rs.getInt("id"));
             q.setUser(DaoFactory.usersDao().getById(rs.getInt("user_id")));
             q.setRoom(DaoFactory.roomsDao().getById(rs.getInt("room_id")));
-            q.setStart(LocalDate.ofEpochDay(rs.getDate("start").getTime()));
-            q.setEnd(LocalDate.ofEpochDay(rs.getDate("end").getTime()));
+            /*q.setStart(LocalDate.ofEpochDay(rs.getDate("start").getTime()));
+            q.setEnd(LocalDate.ofEpochDay(rs.getDate("end").getTime())); */
+            q.setStart(rs.getDate("start").toLocalDate());
+            q.setEnd(rs.getDate("end").toLocalDate());
+
             q.setComments(rs.getString("comments"));
             return q;
         } catch (Exception e) {
@@ -77,7 +80,7 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
 
     public  List<Reservation> reservationsForUser(int userId) throws HotelException {
         List<Reservation> reservationsForUser = new ArrayList<>();
-        String query = "SELECT * FROM reservation WHERE user_id = ?";
+        String query = "SELECT * FROM reservations WHERE user_id = ?";
         try{
             PreparedStatement stmt = getConnection().prepareStatement(query);
             stmt.setInt(1,userId);
