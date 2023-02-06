@@ -11,6 +11,14 @@ import java.time.LocalDate;
  */
 public class ReservationManager {
 
+    /**
+     *
+     * @param startDate
+     * @param endDate
+     * @throws HotelException
+     *
+     * Method for checking if time is valid, end date must be after start date
+     */
     public void isTimeValid(LocalDate startDate, LocalDate endDate) throws HotelException {
         if(endDate.isBefore(startDate))  throw new HotelException("Start date must be before end date");
     }
