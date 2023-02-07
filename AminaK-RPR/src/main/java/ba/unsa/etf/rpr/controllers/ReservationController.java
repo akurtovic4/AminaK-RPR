@@ -6,12 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+/**
+ * This controller in not needed
+ */
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class ReservationController {
     public Button btnReserve;
     public Button btnGoBackUser;
+
 
     public void btnMakeReservation(ActionEvent actionEvent) {
 
