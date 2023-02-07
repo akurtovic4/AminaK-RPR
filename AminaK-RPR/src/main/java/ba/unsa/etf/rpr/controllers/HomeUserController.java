@@ -47,6 +47,9 @@ public class HomeUserController {
         this.reservation = reservation;
     }
 
+    /**
+     * Initialize method happens as soon as window is opened, contains listeners for list of reservations
+     */
     public void initialize()  {
 
         lblName.setText("Hello " + user.getName());
