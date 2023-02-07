@@ -16,6 +16,10 @@ public class EditProfileConstroller {
     public Button btnSaveChanges;
     public Button btnGoUserHome;
 
+    /**
+     * not needed
+     * @param actionEvent
+     */
     public void saveChanges(ActionEvent actionEvent) {
     }
 
