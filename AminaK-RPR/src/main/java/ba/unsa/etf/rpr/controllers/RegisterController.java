@@ -16,6 +16,9 @@ import java.time.LocalDate;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * This controller handles window for registration
+ */
 public class RegisterController {
 
     public TextField nameFld;
