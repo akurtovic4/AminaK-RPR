@@ -75,6 +75,10 @@ public class HomeUserController {
 
     }
 
+    /**
+     * Method for opening edit window
+     * @param actionEvent
+     */
     public void showEditWindow(ActionEvent actionEvent) {
         try{
             Stage stage = (Stage) btnEditProfile.getScene().getWindow();
