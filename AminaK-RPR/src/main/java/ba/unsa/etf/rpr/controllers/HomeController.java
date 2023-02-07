@@ -22,6 +22,10 @@ public class HomeController {
     public Button btnRegister;
     public Button btnLogin;
 
+    /**
+     * This method shows registration form once the user pressed the Make a reservation button
+     * @param event
+     */
     public void showRegister(ActionEvent event){
         try {
 
