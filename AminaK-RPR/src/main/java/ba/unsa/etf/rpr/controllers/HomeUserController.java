@@ -96,6 +96,10 @@ public class HomeUserController {
 
     }
 
+    /**
+     * Method for showing Home window after pressing back button
+     * @param actionEvent
+     */
     public void showHome(ActionEvent actionEvent) {
 
         try{
