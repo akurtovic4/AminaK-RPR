@@ -117,6 +117,10 @@ public class HomeUserController {
         }
     }
 
+    /**
+     * Method that shows window for making reservations after pressing make reservation button
+     * @param actionEvent
+     */
     public void showReservationWindow(ActionEvent actionEvent) {
 
         try{
