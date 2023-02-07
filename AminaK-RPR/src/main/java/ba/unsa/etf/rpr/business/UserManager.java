@@ -35,8 +35,10 @@ public class UserManager {
             throw new HotelException("User has to be adult");
         }
 
-         if(user.getPassword().length() < 8 && (!user.getPassword().contains("&") || !user.getPassword().contains("%"))){
+         if(user.getPassword().length() < 8 || !user.getPassword().contains("&") || !user.getPassword().contains("%")){
+
             throw new HotelException("Password has do be 8 characters long and contain & or %");
+
         }
 
         if(!user.getPassword().equals(confirmPasswordText)){
