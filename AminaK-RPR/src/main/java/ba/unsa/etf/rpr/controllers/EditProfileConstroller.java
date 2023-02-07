@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 /**
- *
+ *not needed
  */
 public class EditProfileConstroller {
     public Button btnSaveChanges;
