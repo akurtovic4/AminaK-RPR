@@ -138,6 +138,10 @@ public class HomeUserController {
         }
     }
 
+    /**
+     * Method that cancels reservation, moves it from listview and deletes it from database after pressing cancelReservation button
+     * @param actionEvent
+     */
     public void cancelReservation(ActionEvent actionEvent) {
 
       // btnCancelReservation.setOnAction(new EventHandler<ActionEvent>() {
