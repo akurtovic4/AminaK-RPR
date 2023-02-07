@@ -115,11 +115,10 @@ public class MakeReservationController {
     }
 
 
-
-
-
-
-
+    /**
+     * This method is for adding reservation in database after user presses reserve button
+     * @param actionEvent
+     */
     public void btnMakeReservation(ActionEvent actionEvent) {
         try {
             (new ReservationManager()).isTimeValid(startDate,endDate);
