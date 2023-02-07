@@ -27,6 +27,10 @@ public class LoginController {
     User u = new User();
     public Button btnLoginBack;
 
+    /**
+     * This method shows user homepage after logging in
+     * @param event
+     */
     public void showHomeUser(ActionEvent event){
 
 
