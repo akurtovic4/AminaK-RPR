@@ -16,6 +16,9 @@ import javafx.stage.StageStyle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
+/**
+ * This controller handles log in window
+ */
 public class LoginController {
 
     public Button btnOkey;
