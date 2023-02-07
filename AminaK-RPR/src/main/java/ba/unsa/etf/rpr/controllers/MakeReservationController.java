@@ -151,7 +151,10 @@ public class MakeReservationController {
     }
 
 
-
+    /**
+     * This method opens home user window after user presses back button
+     * @param actionEvent
+     */
     public void goBackToHome(ActionEvent actionEvent) {
 
         try{
