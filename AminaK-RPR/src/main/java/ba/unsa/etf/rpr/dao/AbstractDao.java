@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * Methods that are needed in every extended class are implemented here
- * @param <T>
+
  */
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     /**

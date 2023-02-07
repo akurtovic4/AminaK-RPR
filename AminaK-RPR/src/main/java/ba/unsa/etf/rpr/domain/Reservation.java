@@ -34,6 +34,10 @@ public class Reservation implements Idable, Serializable {
         this.room = room;
     }
 
+    /**
+     * getter for reservation id
+     * @return
+     */
     @Override
     public int getId() {
         return id;
