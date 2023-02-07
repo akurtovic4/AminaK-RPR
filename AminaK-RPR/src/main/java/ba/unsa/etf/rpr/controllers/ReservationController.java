@@ -24,6 +24,10 @@ public class ReservationController {
 
     }
 
+    /**
+     * not needed
+     * @param actionEvent
+     */
     public void goBackToHome(ActionEvent actionEvent) {
 
         try{
