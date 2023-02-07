@@ -73,7 +73,10 @@ public class HomeController {
     }
 
 
-
+    /**
+     * This method shows Login form once user presses login button
+     * @param event
+     */
     public void showLogin(ActionEvent event){
         try {
             System.out.printf("login");
