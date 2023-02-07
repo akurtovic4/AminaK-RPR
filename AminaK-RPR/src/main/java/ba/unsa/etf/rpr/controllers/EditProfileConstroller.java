@@ -23,6 +23,10 @@ public class EditProfileConstroller {
     public void saveChanges(ActionEvent actionEvent) {
     }
 
+    /**
+     * not needed
+     * @param actionEvent
+     */
     public void goUserHome(ActionEvent actionEvent) {
         try{
             Stage stage = (Stage) btnGoUserHome.getScene().getWindow();
