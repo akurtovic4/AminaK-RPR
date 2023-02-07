@@ -32,7 +32,10 @@ public class RegisterController {
 
     public GridPane registerGridPane;
 
-
+    /**
+     * This method adds user in database after user makes registration
+     * @param event
+     */
     public void userRegister(ActionEvent event) {
         try {
             User u = new User();
