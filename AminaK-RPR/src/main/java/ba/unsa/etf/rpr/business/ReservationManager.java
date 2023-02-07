@@ -21,6 +21,7 @@ public class ReservationManager {
      */
     public void isTimeValid(LocalDate startDate, LocalDate endDate) throws HotelException {
         if(endDate.isBefore(startDate))  throw new HotelException("Start date must be before end date");
+        if(startDate.isBefore(LocalDate.now())) throw new HotelException("Start date must be after current date");
     }
 
     /**
