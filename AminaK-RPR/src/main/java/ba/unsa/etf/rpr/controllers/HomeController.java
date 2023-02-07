@@ -23,7 +23,7 @@ public class HomeController {
     public Button btnLogin;
 
     /**
-     * This method shows registration form once the user pressed the Make a reservation button
+     * This method shows registration form once the user presses the Make a reservation button
      * @param event
      */
     public void showRegister(ActionEvent event){
@@ -48,6 +48,10 @@ public class HomeController {
         }
     }
 
+    /**
+     * This method shows Explore window once user presses Explore button
+     * @param event
+     */
     public void showExplore(ActionEvent event){
         try {
             System.out.printf("istrazi");
