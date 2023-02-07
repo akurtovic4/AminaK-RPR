@@ -59,6 +59,11 @@ public class RegisterController {
         }
     }
 
+
+    /**
+     * This method opens home window after user presses back button
+     * @param actionEvent
+     */
     public void goBackToHome(ActionEvent actionEvent) {
 
         try{
