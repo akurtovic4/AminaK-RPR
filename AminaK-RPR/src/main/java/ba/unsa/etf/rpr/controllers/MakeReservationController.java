@@ -50,11 +50,14 @@ public class MakeReservationController {
 
     private User user;
 
+
     public MakeReservationController(User user) {
         this.user = user;
     }
 
-
+    /**
+     * Initialize method has listeners for fx components so price for room can be changed at the same time as components are being changed
+     */
     @FXML
     public void initialize() {
 
