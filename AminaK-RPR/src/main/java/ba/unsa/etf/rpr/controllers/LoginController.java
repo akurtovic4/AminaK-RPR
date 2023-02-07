@@ -62,6 +62,10 @@ public class LoginController {
         }
     }
 
+    /**
+     * This method shows homepage if user presses back button on login window
+     * @param actionEvent
+     */
 
     public void backToHome(ActionEvent actionEvent) {
 
