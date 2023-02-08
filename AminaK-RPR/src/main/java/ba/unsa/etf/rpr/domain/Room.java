@@ -114,6 +114,10 @@ public class Room implements Idable, Serializable {
                 '}';
     }
 
+    /**
+     * Method for comparing rooms by id, price, floor and type
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
