@@ -167,6 +167,10 @@ public class Reservation implements Idable, Serializable {
         return Objects.hash(id, start, end, comments, user, room);
     }
 
+    /**
+     * Method for printing values for attributes of a reservation
+     * @return
+     */
     @Override
     public String toString() {
         return "Reservation{" +
