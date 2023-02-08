@@ -130,6 +130,10 @@ public class Reservation implements Idable, Serializable {
         this.user = user;
     }
 
+    /**
+     * Getter for attribute room
+     * @return
+     */
     public Room getRoom() {
         return room;
     }
