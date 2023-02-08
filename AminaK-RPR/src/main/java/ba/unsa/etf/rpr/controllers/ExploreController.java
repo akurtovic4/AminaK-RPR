@@ -16,6 +16,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class ExploreController {
 
+    /**
+     * Button for going back to homepage
+     */
     public Button btnBackToHomepage;
 
     /**
