@@ -20,7 +20,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  * This controller handles log in window
  */
 public class LoginController {
-
+    /**
+     * Attributes for LoginController
+     */
     public Button btnOkey;
     public TextField emailFld;
     public PasswordField passwordFld;
