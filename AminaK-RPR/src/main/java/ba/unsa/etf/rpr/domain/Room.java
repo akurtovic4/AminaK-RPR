@@ -62,7 +62,10 @@ public class Room implements Idable, Serializable {
     public Float getPrice() {
         return price;
     }
-
+    /**
+     * Setter for attribute price
+     * @return
+     */
     public void setPrice(Float price) {
         this.price = price;
     }
