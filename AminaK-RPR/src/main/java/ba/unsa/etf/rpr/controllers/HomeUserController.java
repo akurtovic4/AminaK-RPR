@@ -43,6 +43,10 @@ public class HomeUserController {
         user = new User();
     }
 
+    /**
+     * Constructor for HomeUserController has User as parameter
+     * @param u
+     */
     public HomeUserController(User u) {
         user = u;
     }
