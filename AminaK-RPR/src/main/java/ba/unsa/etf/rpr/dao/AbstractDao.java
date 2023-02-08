@@ -39,6 +39,10 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public Connection getConnection(){
 
         return this.connection;
@@ -46,13 +50,29 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
 
     }
 
-
+    /**
+     *
+     * @param rs
+     * @return
+     * @throws HotelException
+     * @throws SQLException
+     */
 
     public abstract T row2object(ResultSet rs) throws HotelException, SQLException;
 
+    /**
+     *
+     * @param object
+     * @return
+     */
     public abstract Map<String, Object> object2row(T object);
 
-
+    /**
+     *
+     * @param id primary key of entity
+     * @return
+     * @throws HotelException
+     */
     public T getById(int id) throws HotelException {
         String query = "SELECT * FROM "+this.tableName+" WHERE id = ?";
         try {
@@ -71,7 +91,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
-
+    /**
+     *
+     * @param comment
+     * @return
+     * @throws HotelException
+     */
     public T getByComment(String comment) throws HotelException {
         String query = "SELECT * FROM "+this.tableName+" WHERE comments = ?";
         try {
@@ -90,7 +115,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
-
+    /**
+     *
+     * @return
+     * @throws HotelException
+     */
 
     public List<T> getAll() throws HotelException {
         String query = "SELECT * FROM "+ tableName;
@@ -109,6 +138,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     *
+     * @param id - primary key of entity
+     * @throws HotelException
+     */
     public void delete(int id) throws HotelException {
         String sql = "DELETE FROM "+tableName+" WHERE id = ?";
         try{
@@ -120,6 +154,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     *
+     * @param item bean for saving to database
+     * @return
+     * @throws HotelException
+     */
     public T add(T item) throws HotelException{
         Map<String, Object> row = object2row(item);
         Map.Entry<String, String> columns = prepareInsertParts(row);
