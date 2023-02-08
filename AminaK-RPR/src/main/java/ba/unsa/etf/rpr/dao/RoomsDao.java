@@ -9,5 +9,11 @@ import java.util.List;
  */
 public interface RoomsDao extends Dao<Room> {
 
+    /**
+     *
+     * @param roomType
+     * @return
+     * @throws HotelException
+     */
     public List<Room> allRoomsThatCanWork(String roomType) throws HotelException;
 }
