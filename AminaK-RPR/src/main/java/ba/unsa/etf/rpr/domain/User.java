@@ -49,6 +49,10 @@ public class User implements Idable, Serializable {
         return name;
     }
 
+    /**
+     * Setter for attribute name
+     * @return
+     */
     public void setName(String name) {
         this.name = name;
     }
