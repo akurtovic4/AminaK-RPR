@@ -74,7 +74,8 @@ public class App
                     user.setName(name);
                     user.setEmail(email);
                     user.setPassword(cpassword);
-                    user.setId(1);
+                    user.setBirth_date(DOB);
+
                     UserManager.add(user, cpassword);
 
                 }catch (Exception e){
