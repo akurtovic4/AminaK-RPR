@@ -13,5 +13,9 @@ public interface Idable {
      */
     void setId(int id);
 
+    /**
+     * Getter for Id
+     * @return
+     */
     int getId();
 }
