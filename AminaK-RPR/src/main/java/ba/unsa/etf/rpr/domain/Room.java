@@ -55,6 +55,10 @@ public class Room implements Idable, Serializable {
         this.id = id;
     }
 
+    /**
+     * Getter for attribute price
+     * @return
+     */
     public Float getPrice() {
         return price;
     }
