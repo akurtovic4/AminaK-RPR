@@ -21,6 +21,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  */
 public class RegisterController {
 
+    /**
+     * Attributes for RegisterController
+     */
     public TextField nameFld;
     public TextField emailFld;
     public PasswordField passwordFld;
