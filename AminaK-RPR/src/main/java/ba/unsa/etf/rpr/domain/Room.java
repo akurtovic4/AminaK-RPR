@@ -77,7 +77,10 @@ public class Room implements Idable, Serializable {
     public Integer getFloor() {
         return floor;
     }
-
+    /**
+     * Setter for attribute floor
+     * @return
+     */
     public void setFloor(Integer floor) {
         this.floor = floor;
     }
