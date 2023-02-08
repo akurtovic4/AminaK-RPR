@@ -18,7 +18,7 @@ public class Room implements Idable, Serializable {
     private RoomType type;
 
     /**
-     *
+     Class constructor with zero parameters
      */
     public Room() {
     }
