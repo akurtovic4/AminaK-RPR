@@ -30,6 +30,15 @@ public class Reservation implements Idable, Serializable {
     public Reservation() {
     }
 
+    /**
+     * Class constructor with all parameters
+     * @param id
+     * @param start
+     * @param end
+     * @param comments
+     * @param user
+     * @param room
+     */
     public Reservation(int id, LocalDate start, LocalDate end, String comments, User user, Room room) {
         this.id = id;
         this.start = start;
@@ -40,7 +49,7 @@ public class Reservation implements Idable, Serializable {
     }
 
     /**
-     * getter for reservation id
+     * Getter for reservation id
      * @return
      */
     @Override
