@@ -96,7 +96,10 @@ public class User implements Idable, Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    /**
+     * Getter for attribute password
+     * @return
+     */
     public String getPassword() {
         return password;
     }
