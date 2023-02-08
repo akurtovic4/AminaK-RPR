@@ -90,6 +90,10 @@ public class Reservation implements Idable, Serializable {
         return end;
     }
 
+    /**
+     * Setter for reservation end date
+     * @return
+     */
     public void setEnd(LocalDate end) {
         this.end = end;
     }
