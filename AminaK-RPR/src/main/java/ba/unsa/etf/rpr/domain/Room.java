@@ -37,6 +37,10 @@ public class Room implements Idable, Serializable {
         this.type = type;
     }
 
+    /**
+     * Getter for attribute id
+     * @return
+     */
     @Override
     public int getId() {
         return id;
