@@ -85,6 +85,10 @@ public class Room implements Idable, Serializable {
         this.floor = floor;
     }
 
+    /**
+     * Getter for attribute type
+     * @return
+     */
     public RoomType getType() {
         return type;
     }
