@@ -100,6 +100,10 @@ public class Room implements Idable, Serializable {
         this.type = type;
     }
 
+    /**
+     * Method for printing values for attributes of a room
+     * @return
+     */
     @Override
     public String toString() {
         return "Room{" +
