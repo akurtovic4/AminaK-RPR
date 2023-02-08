@@ -114,6 +114,10 @@ public class Reservation implements Idable, Serializable {
         this.comments = comments;
     }
 
+    /**
+     * Getter for attribute user
+     * @return
+     */
     public User getUser() {
         return user;
     }
