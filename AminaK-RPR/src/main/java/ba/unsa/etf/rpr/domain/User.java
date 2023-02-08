@@ -88,6 +88,11 @@ public class User implements Idable, Serializable {
         this.birth_date = birth_date;
     }
 
+    /**
+     * Setter for attribute password
+     * @return
+     */
+
     public void setPassword(String password) {
         this.password = password;
     }
