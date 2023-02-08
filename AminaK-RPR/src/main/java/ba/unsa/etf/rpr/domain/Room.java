@@ -126,6 +126,10 @@ public class Room implements Idable, Serializable {
         return id == room.id && Objects.equals(price, room.price) && Objects.equals(floor, room.floor) && type == room.type;
     }
 
+    /**
+     * hashCode method for hashing room attributes
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(floor);
