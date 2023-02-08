@@ -113,6 +113,10 @@ public class User implements Idable, Serializable {
     this.id = id;
     }
 
+    /**
+     * Getter for attribute Id
+     * @return
+     */
     @Override
     public int getId() {
         return id;
