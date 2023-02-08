@@ -190,6 +190,12 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
         }
     }
 
+    /**
+     *
+     * @param item - bean to be updated. id must be populated
+     * @return
+     * @throws HotelException
+     */
     public T update(T item) throws HotelException{
         Map<String, Object> row = object2row(item);
         String updateColumns = prepareUpdateParts(row);
