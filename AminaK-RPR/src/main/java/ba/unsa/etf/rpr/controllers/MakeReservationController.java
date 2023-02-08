@@ -55,6 +55,10 @@ public class MakeReservationController {
     private User user;
 
 
+    /**
+     * Constructor for MakeReservationController with one parameter User.
+     * @param user
+     */
     public MakeReservationController(User user) {
         this.user = user;
     }
