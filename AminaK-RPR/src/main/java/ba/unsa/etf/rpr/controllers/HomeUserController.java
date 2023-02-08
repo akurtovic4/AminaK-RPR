@@ -24,6 +24,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  * This controller handles user homepage window
  */
 public class HomeUserController {
+    /**
+     * Buttons, Label, ListView for HomeUserController
+     */
     public Button btnEditProfile;
     public Button btnLogOut;
     public Label lblName;
