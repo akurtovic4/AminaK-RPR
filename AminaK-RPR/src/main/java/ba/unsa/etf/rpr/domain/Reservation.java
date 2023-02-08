@@ -106,6 +106,10 @@ public class Reservation implements Idable, Serializable {
         return comments;
     }
 
+    /**
+     * Setter for comments about reservation
+     * @return
+     */
     public void setComments(String comments) {
         this.comments = comments;
     }
