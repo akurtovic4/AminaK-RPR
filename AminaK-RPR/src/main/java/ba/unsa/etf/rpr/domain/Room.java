@@ -23,6 +23,13 @@ public class Room implements Idable, Serializable {
     public Room() {
     }
 
+    /**
+     *  Class constructor with all parameters
+     * @param id
+     * @param price
+     * @param floor
+     * @param type
+     */
     public Room(int id, Float price, Integer floor, RoomType type) {
         this.id = id;
         this.price = price;
