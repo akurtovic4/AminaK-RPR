@@ -72,10 +72,14 @@ public class User implements Idable, Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    /**
+     * Getter for attribute birth_date
+     * @return
+     */
     public LocalDate getBirth_date() {
         return birth_date;
     }
+
 
     public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
