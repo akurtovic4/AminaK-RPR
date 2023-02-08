@@ -15,14 +15,26 @@ public class DaoFactory {
    private DaoFactory(){
     }
 
+    /**
+     *
+     * @return
+     */
     public static ReservationsDao reservationsDao(){
         return reservationsDao;
     }
 
+    /**
+     *
+     * @return
+     */
     public static UserDao usersDao(){
         return usersDao;
     }
 
+    /**
+     *
+     * @return
+     */
     public static RoomsDao roomsDao(){
         return roomsDao;
     }
