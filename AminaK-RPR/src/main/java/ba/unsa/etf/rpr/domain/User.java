@@ -41,6 +41,10 @@ public class User implements Idable, Serializable {
     public User() {
     }
 
+    /**
+     * Getter for attribute name
+     * @return
+     */
     public String getName() {
         return name;
     }
