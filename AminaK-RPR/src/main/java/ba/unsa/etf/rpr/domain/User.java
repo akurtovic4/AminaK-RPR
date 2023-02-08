@@ -10,13 +10,23 @@ import java.util.Objects;
  */
 public class User implements Idable, Serializable {
 
+    /**
+     * Class attributes
+     */
     private int id;
     private String name;
     private String email;
     private LocalDate birth_date;
-
     private String password;
 
+    /**
+     * Class constructor with all parameters
+     * @param name
+     * @param email
+     * @param birth_date
+     * @param id
+     * @param password
+     */
     public User(String name, String email, LocalDate birth_date, int id, String password) {
         this.name = name;
         this.email = email;
