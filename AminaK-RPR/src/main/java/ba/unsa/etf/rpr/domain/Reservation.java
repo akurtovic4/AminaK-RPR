@@ -11,6 +11,9 @@ import java.util.Objects;
  */
 public class Reservation implements Idable, Serializable {
 
+    /**
+     * Attributes for class Reservation
+     */
     private int id;
     private LocalDate start;
     private LocalDate end;
