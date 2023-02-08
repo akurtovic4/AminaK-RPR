@@ -122,6 +122,10 @@ public class User implements Idable, Serializable {
         return id;
     }
 
+    /**
+     * Method for printing values for attributes of a user
+     * @return
+     */
     @Override
     public String toString() {
         return "Customer: " + this.name+
