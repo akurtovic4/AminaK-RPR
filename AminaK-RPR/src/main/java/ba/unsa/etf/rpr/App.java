@@ -122,13 +122,14 @@ public class App
             else break;
         }
        int action = action1;
-        listOfReservtionOfaUser(userID);
-/*
+
+
+
        switch (action){
-            case 1 -> listOfReservtionOfaUser(userID);
-            case 2-> buyNewTickets(userID);
-            case 3 -> System.exit(0);
-        }*/
+           case 1 : listOfReservtionOfaUser(userID);
+          //  case 2-> buyNewTickets(userID);
+           case 2 : System.exit(0);
+        }
     }
 
 
@@ -141,7 +142,7 @@ public class App
         }
         System.out.println("Your current reservations: ");
         for (Reservation x: listOfReservations){
-            x.toString();
+            System.out.println(x.toString());
         }
         options(userID);
     }
