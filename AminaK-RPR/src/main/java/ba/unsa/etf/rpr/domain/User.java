@@ -147,6 +147,10 @@ public class User implements Idable, Serializable {
         return id == user.id && Objects.equals(name, user.name) && Objects.equals(email, user.email) && Objects.equals(birth_date, user.birth_date);
     }
 
+    /**
+     * hashCode method for hashing users attributes
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, name, email, birth_date);
