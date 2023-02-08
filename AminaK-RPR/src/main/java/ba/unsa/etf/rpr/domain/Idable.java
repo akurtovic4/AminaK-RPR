@@ -7,6 +7,10 @@ package ba.unsa.etf.rpr.domain;
 
 public interface Idable {
 
+    /**
+     * Setter for Id
+     * @param id
+     */
     void setId(int id);
 
     int getId();
