@@ -52,6 +52,19 @@ public class App
                 }
             }
             if(scanner.nextInt() == 2){
+                String name, email, password, cpassword;
+                LocalDate DOB;
+                System.out.print("Name: ");
+                Scanner scanner3 = new Scanner(System.in);
+                name = scanner3.next();
+                System.out.print("Email: ");
+                Scanner scanner4 = new Scanner(System.in);
+                email = scanner4.next();
+                System.out.print("Date of birth ");
+                Scanner scanner5 = new Scanner(System.in);
+                //DOB = scanner5.nextLocalDate();
+
+               // provjera registracije
 
             }
 
