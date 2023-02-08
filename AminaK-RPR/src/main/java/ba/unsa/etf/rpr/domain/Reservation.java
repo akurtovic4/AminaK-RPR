@@ -98,6 +98,10 @@ public class Reservation implements Idable, Serializable {
         this.end = end;
     }
 
+    /**
+     * Getter for comments about reservation
+     * @return
+     */
     public String getComments() {
         return comments;
     }
