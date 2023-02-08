@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr;
 
+import ba.unsa.etf.rpr.business.ReservationManager;
+
 import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.dao.*;
 import ba.unsa.etf.rpr.domain.Reservation;
@@ -12,6 +14,7 @@ import javafx.util.Pair;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -103,6 +106,22 @@ public class App
         return LocalDate.parse(str, dtf);
     }
 
+    public static LocalDate addStartDate() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a start[dd/MM/yyyy]: ");
+        String str = scan.nextLine();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return LocalDate.parse(str, dtf);
+    }
+
+    public static LocalDate addEndDate() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a start[dd/MM/yyyy]: ");
+        String str = scan.nextLine();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return LocalDate.parse(str, dtf);
+    }
+
     private static void options(int userID) throws HotelException {
         System.out.println("How can we help you today ");
         System.out.println("1: Show me a list of my reservations");
@@ -127,8 +146,8 @@ public class App
 
        switch (action){
            case 1 : listOfReservtionOfaUser(userID);
-          //  case 2-> buyNewTickets(userID);
-           case 2 : System.exit(0);
+           case 2 :  makeAReservation(userID);
+           case 3 : System.exit(0);
         }
     }
 
@@ -146,4 +165,52 @@ public class App
         }
         options(userID);
     }
+
+
+    private static void makeAReservation(int userID) throws HotelException {
+
+        RoomType room = null;
+        LocalDate startDate, endDate;
+        int numberOfPeople;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Number of people staying: ");
+        numberOfPeople = scanner.nextInt();
+        System.out.println("Start date: ");
+        startDate = addStartDate();
+        System.out.println("End date: ");
+        endDate = addEndDate();
+        switch(numberOfPeople) {
+            case 1:
+               room = RoomType.SINGLE_ROOM;
+                break;
+            case 2:
+               room = RoomType.DOUBLE_ROOM;
+                break;
+            case 3:
+                room = RoomType.TRIPLE_ROOM;
+                break;
+            case 4:
+                room = RoomType.QUADRUPLE_ROOM;
+                break;
+        }
+       User user = DaoFactory.usersDao().getById(userID);
+
+
+
+        Reservation reservation = new Reservation(1,startDate,endDate," ",user, new Room(1,5F,2,room));
+        ReservationManager reservationManager = new ReservationManager();
+        List<Reservation> reservations = new ArrayList<>();
+        reservations = DaoFactory.reservationsDao().getAll();
+        for(Reservation x : reservations){
+            if(x.getStart()== reservation.getStart() && x.getEnd() == reservation.getEnd() && x.getUser()  == reservation.getUser())
+                System.out.println("You can't make this reservation");
+
+            else{
+                reservationManager.add(reservation);
+                System.out.println("Your reservation is successfully added");
+            }
+        }
+        options(user.getId());
+    }
+
 }

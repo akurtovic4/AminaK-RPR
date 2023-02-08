@@ -96,5 +96,24 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
         return item;
     }
 
+    @Override
+    public User getById(int id) throws HotelException {
+        String query = "SELECT * FROM users WHERE id = ?";
+        try {
+            PreparedStatement stmt = getConnection().prepareStatement(query);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) { // result set is iterator.
+                User result = row2object(rs);
+                rs.close();
+                return result;
+            } else {
+                throw new HotelException("Object not found");
+            }
+        } catch (SQLException e) {
+            throw new HotelException(e.getMessage(), e);
+        }
+    }
+
 
 }
