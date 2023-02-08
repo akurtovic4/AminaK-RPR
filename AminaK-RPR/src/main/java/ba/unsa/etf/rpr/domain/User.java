@@ -135,6 +135,10 @@ public class User implements Idable, Serializable {
                 "password" + this.password;
     }
 
+    /**
+     * Method for comparing users by id, name, email and birthdate
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
