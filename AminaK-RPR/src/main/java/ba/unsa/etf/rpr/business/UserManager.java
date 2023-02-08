@@ -21,6 +21,7 @@ public class UserManager {
      * @throws HotelException
      * This method adds user only if his username and password are correct
      */
+
     public User add(User user, String confirmPasswordText) throws HotelException {
 
         if (user.getName().equals(null) || user.getPassword().equals(null) || user.getEmail().equals(null) || user.getBirth_date()==null || confirmPasswordText.equals(null)){

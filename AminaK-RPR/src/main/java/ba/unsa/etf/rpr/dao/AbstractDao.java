@@ -24,8 +24,11 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
      * Method for connection to database
      */
     public AbstractDao(String tableName) {
+        this.tableName = tableName;
+        if (connection == null)
+
         try{
-            this.tableName = tableName;
+
             Properties p = new Properties();
             p.load(ClassLoader.getSystemResource("application.properties").openStream());
             String url = p.getProperty("db.url");
