@@ -41,10 +41,18 @@ public class App
                         break;
                     }
                     System.out.println("Username or password is wrong. Please try again.");
-                  /*  tmp = getInputData();
-                    userName = tmp.getKey();
-                    userPassword = tmp.getValue();*/
+                    String name1;
+                    String pass1;
+                    System.out.print("Email: ");
+                    Scanner scanner2 = new Scanner(System.in);
+                    name = scanner2.next();
+                    System.out.print("Password: ");
+
+                    pass = scanner2.next();
                 }
+            }
+            if(scanner.nextInt() == 2){
+
             }
 
 
