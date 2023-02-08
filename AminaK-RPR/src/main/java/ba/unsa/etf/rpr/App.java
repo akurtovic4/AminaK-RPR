@@ -12,6 +12,7 @@ import javafx.util.Pair;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -102,7 +103,7 @@ public class App
         return LocalDate.parse(str, dtf);
     }
 
-    private static void options(int userID){
+    private static void options(int userID) throws HotelException {
         System.out.println("How can we help you today ");
         System.out.println("1: Show me a list of my reservations");
         System.out.println("2. Make a reservation");
@@ -116,16 +117,32 @@ public class App
             System.out.print("I want: ");
             action1 = scanner.nextInt();
             if (action1 < 1 || action1 > 3){
-                System.out.println("You haven' choose any option, please try again");
+                System.out.println("You haven't choose any option, please try again");
             }
             else break;
         }
        int action = action1;
-
-      /*  switch (action){
-            case 1 -> listUserTickets(userID);
+        listOfReservtionOfaUser(userID);
+/*
+       switch (action){
+            case 1 -> listOfReservtionOfaUser(userID);
             case 2-> buyNewTickets(userID);
             case 3 -> System.exit(0);
         }*/
+    }
+
+
+    private static void listOfReservtionOfaUser(int userID) throws HotelException {
+        List<Reservation> listOfReservations = DaoFactory.reservationsDao().reservationsForUser(userID);
+        if (listOfReservations.isEmpty()){
+            System.out.println("You haven't made any reservations yet!\n");
+            options(userID);
+            return;
+        }
+        System.out.println("Your current reservations: ");
+        for (Reservation x: listOfReservations){
+            x.toString();
+        }
+        options(userID);
     }
 }
