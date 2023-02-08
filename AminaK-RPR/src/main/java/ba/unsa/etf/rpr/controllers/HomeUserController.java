@@ -51,6 +51,10 @@ public class HomeUserController {
         user = u;
     }
 
+    /**
+     * Constructor for HomeUserController has Reservation as parameter
+     * @param reservation
+     */
     public HomeUserController(Reservation reservation) {
         this.reservation = reservation;
     }
