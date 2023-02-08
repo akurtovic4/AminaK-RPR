@@ -35,7 +35,9 @@ public class User implements Idable, Serializable {
         this.password = password;
     }
 
-
+ /**
+ Class constructor with zero parameters
+  */
     public User() {
     }
 
