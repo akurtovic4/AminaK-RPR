@@ -146,6 +146,10 @@ public class Reservation implements Idable, Serializable {
         this.room = room;
     }
 
+    /**
+     * Method for comparing reservations by all attributes
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
