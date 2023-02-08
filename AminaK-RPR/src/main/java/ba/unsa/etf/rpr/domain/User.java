@@ -57,6 +57,10 @@ public class User implements Idable, Serializable {
         this.name = name;
     }
 
+    /**
+     * Getter for attribute email
+     * @return
+     */
     public String getEmail() {
         return email;
     }
