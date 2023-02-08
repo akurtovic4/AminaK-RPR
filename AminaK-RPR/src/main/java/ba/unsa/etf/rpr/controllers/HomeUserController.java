@@ -33,11 +33,12 @@ public class HomeUserController {
     public Button btnMakeReservation;
     public ListView listView;
     public Button btnCancelReservation;
-
     private User user;
-
     private Reservation reservation;
 
+    /**
+     * Constructor for HomeUser controller that sets new User
+     */
     public HomeUserController() {
         user = new User();
     }
