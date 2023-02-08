@@ -5,11 +5,13 @@ import ba.unsa.etf.rpr.dao.*;
 import ba.unsa.etf.rpr.domain.Reservation;
 import ba.unsa.etf.rpr.domain.Room;
 import ba.unsa.etf.rpr.domain.RoomType;
+import ba.unsa.etf.rpr.business.UserManager;
 import ba.unsa.etf.rpr.domain.User;
 import ba.unsa.etf.rpr.exceptions.HotelException;
 import javafx.util.Pair;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
@@ -52,19 +54,36 @@ public class App
                 }
             }
             if(scanner.nextInt() == 2){
-                String name, email, password, cpassword;
-                LocalDate DOB;
-                System.out.print("Name: ");
-                Scanner scanner3 = new Scanner(System.in);
-                name = scanner3.next();
-                System.out.print("Email: ");
-                Scanner scanner4 = new Scanner(System.in);
-                email = scanner4.next();
-                System.out.print("Date of birth ");
-                Scanner scanner5 = new Scanner(System.in);
-                //DOB = scanner5.nextLocalDate();
+                try{
+                    String name, email, password, cpassword;
+                    LocalDate DOB;
+                    System.out.print("Name: ");
+                    Scanner scanner3 = new Scanner(System.in);
+                    name = scanner3.next();
+                    System.out.print("Email: ");
+                    Scanner scanner4 = new Scanner(System.in);
+                    email = scanner4.next();
+                    DOB = addDate();
+                    System.out.print("Password: ");
+                    Scanner scanner5 = new Scanner(System.in);
+                    password = scanner5.next();
+                    System.out.print("Confirm password: ");
+                    Scanner scanner6 = new Scanner(System.in);
+                    cpassword = scanner6.next();
+                    User user = new User();
+                    user.setName(name);
+                    user.setEmail(email);
+                    user.setPassword(cpassword);
+                    user.setId(1);
+                    UserManager.add(user, cpassword);
 
-               // provjera registracije
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
+
+
 
             }
 
@@ -73,5 +92,13 @@ public class App
 
 
 
+    }
+
+    public static LocalDate addDate() {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a date of birth [dd/MM/yyyy]: ");
+        String str = scan.nextLine();
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return LocalDate.parse(str, dtf);
     }
 }

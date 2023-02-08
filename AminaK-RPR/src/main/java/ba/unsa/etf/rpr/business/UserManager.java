@@ -22,7 +22,7 @@ public class UserManager {
      * This method adds user only if his username and password are correct
      */
 
-    public User add(User user, String confirmPasswordText) throws HotelException {
+    public static User add(User user, String confirmPasswordText) throws HotelException {
 
         if (user.getName().equals(null) || user.getPassword().equals(null) || user.getEmail().equals(null) || user.getBirth_date()==null || confirmPasswordText.equals(null)){
             throw new HotelException("All fields have to be filled");
