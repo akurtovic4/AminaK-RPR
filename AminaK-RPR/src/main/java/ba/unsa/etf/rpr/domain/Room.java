@@ -92,7 +92,10 @@ public class Room implements Idable, Serializable {
     public RoomType getType() {
         return type;
     }
-
+    /**
+     * Setter for attribute type
+     * @return
+     */
     public void setType(RoomType type) {
         this.type = type;
     }
