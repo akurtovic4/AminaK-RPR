@@ -9,12 +9,17 @@ import java.util.Objects;
  */
 public class Room implements Idable, Serializable {
 
+    /**
+     * Attributes for java class Room
+     */
     private int id;
     private Float price;
     private Integer floor;
     private RoomType type;
 
-
+    /**
+     *
+     */
     public Room() {
     }
 
