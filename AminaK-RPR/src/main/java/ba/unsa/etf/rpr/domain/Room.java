@@ -70,6 +70,10 @@ public class Room implements Idable, Serializable {
         this.price = price;
     }
 
+    /**
+     * Getter for attribute floor
+     * @return
+     */
     public Integer getFloor() {
         return floor;
     }
