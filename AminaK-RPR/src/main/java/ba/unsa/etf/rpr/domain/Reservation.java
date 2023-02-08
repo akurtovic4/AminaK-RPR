@@ -158,6 +158,10 @@ public class Reservation implements Idable, Serializable {
         return id == that.id && Objects.equals(start, that.start) && Objects.equals(end, that.end) && Objects.equals(comments, that.comments) && Objects.equals(user, that.user) && Objects.equals(room, that.room);
     }
 
+    /**
+     * hashCode method for hashing users attributes
+     * @return
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, start, end, comments, user, room);
