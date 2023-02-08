@@ -122,6 +122,10 @@ public class Reservation implements Idable, Serializable {
         return user;
     }
 
+    /**
+     * Setter for attribute user
+     * @return
+     */
     public void setUser(User user) {
         this.user = user;
     }
