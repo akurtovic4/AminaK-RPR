@@ -82,6 +82,10 @@ public class Reservation implements Idable, Serializable {
         this.start = start;
     }
 
+    /**
+     * Getter for reservation start date
+     * @return
+     */
     public LocalDate getEnd() {
         return end;
     }
