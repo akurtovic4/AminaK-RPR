@@ -24,7 +24,9 @@ public class Reservation implements Idable, Serializable {
 
 
 
-
+    /**
+     Class constructor with zero parameters
+     */
     public Reservation() {
     }
 
