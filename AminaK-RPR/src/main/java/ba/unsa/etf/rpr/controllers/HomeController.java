@@ -17,7 +17,9 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  */
 public class HomeController {
 
-
+    /**
+     * Buttons for HomeController
+     */
     public Button btnExplore;
     public Button btnRegister;
     public Button btnLogin;
