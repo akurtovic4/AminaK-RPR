@@ -65,6 +65,10 @@ public class User implements Idable, Serializable {
         return email;
     }
 
+    /**
+     * Setter for attribute email
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
