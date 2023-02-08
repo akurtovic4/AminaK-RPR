@@ -30,6 +30,10 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  * This controller handles window for making reservations
  */
 public class MakeReservationController {
+
+    /**
+     * Attributes for MakeReservationController
+     */
     public DatePicker dpStart;
     public ListView reservationList;
     public Button btnReserve;
