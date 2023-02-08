@@ -104,6 +104,10 @@ public class User implements Idable, Serializable {
         return password;
     }
 
+    /**
+     * Setter for attribute Id
+     * @return
+     */
     @Override
     public void setId(int id) {
     this.id = id;
