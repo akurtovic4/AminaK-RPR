@@ -80,7 +80,10 @@ public class User implements Idable, Serializable {
         return birth_date;
     }
 
-
+    /**
+     * Setter for attribute birth_date
+     * @return
+     */
     public void setBirth_date(LocalDate birth_date) {
         this.birth_date = birth_date;
     }
