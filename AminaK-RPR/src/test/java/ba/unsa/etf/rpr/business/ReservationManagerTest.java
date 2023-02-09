@@ -69,6 +69,7 @@ class ReservationManagerTest {
         reservation.setUser(user);
         reservation.setComments("rpr");
         reservation.setRoom(room);
+
         MockedStatic<DaoFactory> mockedFactory = Mockito.mockStatic(DaoFactory.class);
         mockedFactory.when(DaoFactory::reservationsDao).thenReturn(reservationsDaoSQLMock);
         Reservation expected = new Reservation();
