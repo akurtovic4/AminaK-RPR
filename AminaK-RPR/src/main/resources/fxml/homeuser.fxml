@@ -20,15 +20,14 @@
          </image>
       </ImageView>
       <ListView fx:id="listView" editable="true" layoutX="39.0" layoutY="120.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="btnEditProfile" layoutX="202.0" layoutY="21.0" mnemonicParsing="false" onAction="#showEditWindow" text="Edit profile" />
       <Button fx:id="btnLogOut" layoutX="520.0" layoutY="360.0" mnemonicParsing="false" onAction="#showHome" text="Log out" />
-      <Label fx:id="lblName" layoutX="39.0" layoutY="22.0" text="HELLO, ALMINA">
+      <Label fx:id="lblName" layoutX="39.0" layoutY="22.0" text="HELLO, AMINA">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="39.0" layoutY="95.0" text="Your reservations" />
-      <Button fx:id="btnMakeReservation" layoutX="315.0" layoutY="21.0" mnemonicParsing="false" onAction="#showReservationWindow" text="Make a reservation" />
+      <Button fx:id="btnMakeReservation" layoutX="436.0" layoutY="120.0" mnemonicParsing="false" onAction="#showReservationWindow" text="Make a reservation" />
       <Button fx:id="btnCancelReservation" layoutX="274.0" layoutY="120.0" mnemonicParsing="false" onAction="#cancelReservation" text="Cancel reservation" />
    </children>
 </AnchorPane>
