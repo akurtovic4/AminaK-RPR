@@ -30,7 +30,7 @@ class RoomTest {
                 "{id=" + room.getId() +
                 ", price=" + room.getPrice() +
                 ", floor=" + room.getFloor() +
-                ", type=" + room.getType() + "}"; // put the expected value here
+                ", type=" + room.getType() + "}";
         assertEquals(expected, room.toString());
 
     }
