@@ -28,9 +28,10 @@ public class App
 
 
             System.out.println("Hello. Welcome to hotel Aminolino!");
-            Scanner scanner = new Scanner(System.in);
 
-            System.out.println("If you like to log in type 1, if you want to register, type 2");
+
+            System.out.println("If you like to log in type 1, if you want to register, type 2: ");
+        Scanner scanner = new Scanner(System.in);
             if(scanner.nextInt() == 1) {
                 String name;
                 String pass;
@@ -59,6 +60,7 @@ public class App
                 }
                 options(user.getId());
             }
+
             if(scanner.nextInt() == 2){
                 try{
                     String name, email, password, cpassword;
@@ -126,7 +128,8 @@ public class App
         System.out.println("How can we help you today ");
         System.out.println("1: Show me a list of my reservations");
         System.out.println("2. Make a reservation");
-        System.out.println("3. Log out");
+        System.out.println("3. Cancel a reservation");
+        System.out.println("4. Log out");
 
 
 
@@ -135,7 +138,7 @@ public class App
         while(true){
             System.out.print("I want: ");
             action1 = scanner.nextInt();
-            if (action1 < 1 || action1 > 3){
+            if (action1 < 1 || action1 > 4){
                 System.out.println("You haven't choose any option, please try again");
             }
             else break;
@@ -147,9 +150,12 @@ public class App
        switch (action){
            case 1 : listOfReservtionOfaUser(userID);
            case 2 :  makeAReservation(userID);
-           case 3 : System.exit(0);
+           case 3 : cancelReservation(userID);
+           case 4 : System.exit(0);
         }
     }
+
+
 
 
     private static void listOfReservtionOfaUser(int userID) throws HotelException {
@@ -160,8 +166,10 @@ public class App
             return;
         }
         System.out.println("Your current reservations: ");
+        int m = 0;
         for (Reservation x: listOfReservations){
-            System.out.println(x.toString());
+            System.out.println(m + "-" + x.toString());
+            m++;
         }
         options(userID);
     }
@@ -212,5 +220,30 @@ public class App
         }
         options(user.getId());
     }
+
+
+    private static void cancelReservation(int userID) throws HotelException {
+        List<Reservation> listOfReservations = DaoFactory.reservationsDao().reservationsForUser(userID);
+        if (listOfReservations.isEmpty()){
+            System.out.println("You haven't made any reservations yet!\n");
+            options(userID);
+            return;
+        }
+        System.out.println("Your current reservations: ");
+        int c = 0;
+        for (Reservation x: listOfReservations){
+            System.out.println(c + "-" + x.toString());
+            c++;
+        }
+        System.out.println("Choose the reservation you want to cancel: ");
+        Scanner scanner = new Scanner(System.in);
+        int numberOfCanceledReservation = scanner.nextInt();
+        DaoFactory.reservationsDao().delete(listOfReservations.get(numberOfCanceledReservation).getId());
+        options(userID);
+
+
+    }
+
+
 
 }
