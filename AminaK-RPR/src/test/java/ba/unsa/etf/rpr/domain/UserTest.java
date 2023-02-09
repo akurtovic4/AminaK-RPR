@@ -42,8 +42,5 @@ class UserTest {
     void getPassword() {
         assertEquals("Amina123&", user.getPassword());
     }
-/*
-    @Test
-    void testToString() {
-    }*/
+
 }
