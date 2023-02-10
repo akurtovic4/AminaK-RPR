@@ -34,10 +34,15 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-
+/**
+ * Tests for ReservationManager class
+ */
 
 class ReservationManagerTest {
 
+    /**
+     * attributes needed
+     */
     private List<Reservation> res = new ArrayList<>();
 
     private ReservationsDaoSQLImpl reservationsDaoSQLMock = Mockito.mock(ReservationsDaoSQLImpl.class);
@@ -45,8 +50,9 @@ class ReservationManagerTest {
     private ReservationManager reservationManager = new ReservationManager();
 
 
-
-
+    /**
+     * Test if time is valid
+     */
     @Test
     void isTimeValid() {
         LocalDate startDate = LocalDate.now();
@@ -55,9 +61,10 @@ class ReservationManagerTest {
     }
 
 
-
-
-
+    /**
+     * Mockito test for adding reservation
+     * @throws HotelException
+     */
     @Test
         void add() throws HotelException{
         Reservation reservation = new Reservation();

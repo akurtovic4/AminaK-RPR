@@ -18,14 +18,22 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-
+/**
+ * Tests for class UserManager
+ */
 class UserManagerTest {
 
 
-
+    /**
+     * attributes needed
+     */
     private UserDaoSQLImpl usersDaoSQLMock = Mockito.mock(UserDaoSQLImpl.class);
 
     private UserManager userManager = new UserManager();
+
+    /**
+     * Setting up values of user
+     */
     @BeforeEach
     public void setUp() {
         User user = new User();
@@ -40,8 +48,16 @@ class UserManagerTest {
 
 
     }
+
+    /**
+     * user dao instance
+     */
     private UserDao usersDaoMock;
-    private UserManager userService;
+
+    /**
+     * Mockito test for adding user to database
+     * @throws HotelException
+     */
     @Test
     void add() throws HotelException {
 

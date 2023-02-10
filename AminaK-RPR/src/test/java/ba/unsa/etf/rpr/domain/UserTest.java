@@ -9,8 +9,19 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * tests for domain class User
+ */
 class UserTest {
+
+    /**
+     * new user
+     */
     private User user = new User();
+
+    /**
+     * setting up new user
+     */
     @BeforeEach
     public void setUp() {
 
@@ -23,21 +34,33 @@ class UserTest {
 
     }
 
+    /**
+     * Getter test for attribute name
+     */
     @Test
     void getName() {
         assertEquals("Aminko", user.getName());
     }
 
+    /**
+     * Getter test for attribute email
+     */
     @Test
     void getEmail() {
         assertEquals("amina12345", user.getEmail());
     }
 
+    /**
+     * Getter test for attribute birth_date
+     */
     @Test
     void getBirth_date() {
         assertEquals(LocalDate.now(), user.getBirth_date());
     }
 
+    /**
+     * Getter test for attribute password
+     */
     @Test
     void getPassword() {
         assertEquals("Amina123&", user.getPassword());

@@ -31,7 +31,9 @@ class RoomTest {
     }
 
 
-
+    /**
+     * Test for toString
+     */
     @Test
     void testToString() {
 
