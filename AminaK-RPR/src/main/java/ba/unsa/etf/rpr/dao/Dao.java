@@ -10,7 +10,12 @@ import java.util.List;
  *     Dao interface extend by RoomsDao, ReservationDao, UsersDao
  */
 public interface Dao<T> {
-
+ /**
+  * get entity from database base on comment
+  * @param password
+  * @return
+  * @throws HotelException
+  */
    T getByComment(String password) throws HotelException;
     /**
      * get entity from database base on ID

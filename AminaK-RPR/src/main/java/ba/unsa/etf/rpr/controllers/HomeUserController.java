@@ -91,22 +91,7 @@ public class HomeUserController {
      * Method for opening edit window
      * @param actionEvent
      */
-    public void showEditWindow(ActionEvent actionEvent) {
-        try{
-            Stage stage = (Stage) btnEditProfile.getScene().getWindow();
-            stage.close();
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/edit.fxml"));
-            fxmlLoader.setController(new EditProfileConstroller());
-            Parent root = fxmlLoader.load();
-            stage.setScene(new Scene(root, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
-            stage.setResizable(false);
-            stage.show();
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
 
-    }
 
     /**
      * Method for showing Home window after pressing back button
@@ -115,7 +100,7 @@ public class HomeUserController {
     public void showHome(ActionEvent actionEvent) {
 
         try{
-            Stage stage = (Stage) btnEditProfile.getScene().getWindow();
+            Stage stage = (Stage) btnLogOut.getScene().getWindow();
             stage.close();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
             fxmlLoader.setController(new HomeController());

@@ -12,6 +12,7 @@ import java.util.*;
  */
 public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     /**
+     * Attributes for connection
      * singelton pattern
      */
 
@@ -43,7 +44,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Constructor for connection
      * @return
      */
     public Connection getConnection(){
@@ -54,7 +55,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for turning data from database to objects
      * @param rs
      * @return
      * @throws HotelException
@@ -64,14 +65,14 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     public abstract T row2object(ResultSet rs) throws HotelException, SQLException;
 
     /**
-     *
+     *Method for turning objects into data for database
      * @param object
      * @return
      */
     public abstract Map<String, Object> object2row(T object);
 
     /**
-     *
+     *Method for getting data by ID
      * @param id primary key of entity
      * @return
      * @throws HotelException
@@ -95,7 +96,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for getting data by comment
      * @param comment
      * @return
      * @throws HotelException
@@ -119,7 +120,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for getting all data from certain table
      * @return
      * @throws HotelException
      */
@@ -142,7 +143,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for deleting data by ID
      * @param id - primary key of entity
      * @throws HotelException
      */
@@ -158,7 +159,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for adding data into database
      * @param item bean for saving to database
      * @return
      * @throws HotelException
@@ -194,7 +195,7 @@ public abstract class AbstractDao<T extends Idable> implements Dao<T> {
     }
 
     /**
-     *
+     *Method for updating data
      * @param item - bean to be updated. id must be populated
      * @return
      * @throws HotelException
