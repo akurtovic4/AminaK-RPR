@@ -1,7 +1,7 @@
 package ba.unsa.etf.rpr.dao;
 
 /**
- *
+ *DaoFactory class for making instances od dao classes
  */
 public class DaoFactory {
 

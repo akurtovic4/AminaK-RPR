@@ -13,7 +13,7 @@ import java.util.List;
 public interface ReservationsDao extends Dao<Reservation> {
 
     /**
-     *
+     *Method for finding all reserved rooms
      * @param startDate
      * @param endDate
      * @return
@@ -22,7 +22,7 @@ public interface ReservationsDao extends Dao<Reservation> {
     public List<Room> reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException;
 
     /**
-     *
+     *Method for finding all reservations for specific user
      * @param userId
      * @return
      * @throws HotelException

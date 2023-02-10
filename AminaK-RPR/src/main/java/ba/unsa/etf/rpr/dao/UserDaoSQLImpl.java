@@ -16,20 +16,20 @@ import java.util.TreeMap;
 public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
 
     /**
-     *
+     *Constructor from parent class
      */
     public UserDaoSQLImpl() {
         super("users");
     }
 
     /**
-     *
+     * Method for turning data form database to objects
      * @param rs
      * @return
      * @throws HotelException
      * @throws SQLException
      *
-     * Method for turning data form database to objects
+     *
      */
     @Override
     public User row2object(ResultSet rs) throws HotelException, SQLException {
@@ -49,12 +49,12 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
 
 
     /**
-     *
+     * Method returns user with specific email
      * @param email
      * @return
      * @throws HotelException
      *
-     * Method returns user with specific email
+     *
      */
     public User getByEmail(String email) throws HotelException{
 
@@ -79,11 +79,11 @@ public class UserDaoSQLImpl extends AbstractDao<User> implements UserDao {
     }
 
     /**
-     *
+     * Method for turning objects to data for database
      * @param object
      * @return
      *
-     * Method for turning objects to data for database
+     *
      */
     @Override
     public Map<String, Object> object2row(User object) {

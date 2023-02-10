@@ -18,18 +18,18 @@ import java.util.TreeMap;
  */
 public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements ReservationsDao{
     /**
-     *
+     *Constructor for table (from parent class)
      */
     public ReservationsDaoSQLImpl() {
         super("reservations");
     }
 
     /**
-     *
+     * Method that turns data from database to objects
      * @param rs
      * @return
      * @throws HotelException
-     * Method that turns data from database to objects
+     *
      */
 
     @Override
@@ -52,10 +52,10 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
     }
 
     /**
-     *
+     *Method that turns objects to data for database
      * @param object
      * @return
-     * Method that turns objects to data for database
+     *
      */
     @Override
     public Map<String, Object> object2row(Reservation object) {
@@ -71,13 +71,13 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
     }
 
     /**
-     *
+     *Method that takes all rooms form database according to start and end date
      * @param startDate
      * @param endDate
      * @return
      * @throws HotelException
      *
-     * Method that takes all rooms form database according to start and end date
+     *
      */
     public List<Room> reservedRooms(LocalDate startDate, LocalDate endDate) throws HotelException {
 
@@ -106,11 +106,11 @@ public class ReservationsDaoSQLImpl extends AbstractDao<Reservation> implements 
     }
 
     /**
-     *
+     * Method that takes all reservations for one user
      * @param userId
      * @return
      * @throws HotelException
-     * Method that takdes all reservations for one user
+     *
      */
 
     public  List<Reservation> reservationsForUser(int userId) throws HotelException {

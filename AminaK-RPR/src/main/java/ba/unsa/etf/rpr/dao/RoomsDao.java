@@ -10,7 +10,7 @@ import java.util.List;
 public interface RoomsDao extends Dao<Room> {
 
     /**
-     *
+     * Method that finds all available rooms
      * @param roomType
      * @return
      * @throws HotelException

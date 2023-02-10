@@ -26,11 +26,11 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
 
 
     /**
-     *
+     * Method that turns data from database to objects
      * @param rs
      * @return
      * @throws HotelException
-     * Method that turns data from database to objects
+     *
      */
 
 
@@ -50,10 +50,10 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
     }
 
     /**
-     *
+     *  Method that turns objects to data for database
      * @param object
      * @return
-     * Method that turns objects to data for database
+     *
      */
     @Override
     public Map<String, Object> object2row(Room object) {
@@ -67,12 +67,12 @@ public class RoomsDaoSQLImpl extends AbstractDao<Room> implements RoomsDao{
     }
 
     /**
-     *
+     * Method that takes all room with specific room type passed as parameter and puts them in a List
      * @param roomType
      * @return
      * @throws HotelException
      *
-     * Method that takes all room with specific room type passed as parameter and puts them in a List
+     *
      */
 
     public List<Room> allRoomsThatCanWork(String roomType) throws HotelException {

@@ -19,11 +19,16 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Hello world!
+ *Terminal user interface
 
  */
 public class App 
 {
+    /**
+     * main method
+     * @param args
+     * @throws HotelException
+     */
     public static void main( String[] args ) throws HotelException {
 
 
@@ -100,6 +105,10 @@ public class App
 
     }
 
+    /**
+     * Method for entering date
+     * @return
+     */
     public static LocalDate addDate() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a date of birth [dd/MM/yyyy]: ");
@@ -108,6 +117,10 @@ public class App
         return LocalDate.parse(str, dtf);
     }
 
+    /**
+     * Method for entering start date
+     * @return
+     */
     public static LocalDate addStartDate() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a start[dd/MM/yyyy]: ");
@@ -116,6 +129,10 @@ public class App
         return LocalDate.parse(str, dtf);
     }
 
+    /**
+     * Method for entering end date
+     * @return
+     */
     public static LocalDate addEndDate() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a start[dd/MM/yyyy]: ");
@@ -123,6 +140,12 @@ public class App
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(str, dtf);
     }
+
+    /**
+     * Method for choosing option
+     * @param userID
+     * @throws HotelException
+     */
 
     private static void options(int userID) throws HotelException {
         System.out.println("How can we help you today ");
@@ -156,7 +179,11 @@ public class App
     }
 
 
-
+    /**
+     * Method that makes reservation list of a specific user
+     * @param userID
+     * @throws HotelException
+     */
 
     private static void listOfReservtionOfaUser(int userID) throws HotelException {
         List<Reservation> listOfReservations = DaoFactory.reservationsDao().reservationsForUser(userID);
@@ -174,7 +201,11 @@ public class App
         options(userID);
     }
 
-
+    /**
+     * Method that takes user id and makes reservation
+     * @param userID
+     * @throws HotelException
+     */
     private static void makeAReservation(int userID) throws HotelException {
 
         RoomType room = null;
@@ -221,7 +252,11 @@ public class App
         options(user.getId());
     }
 
-
+    /**
+     * Method for canceling reservation
+     * @param userID
+     * @throws HotelException
+     */
     private static void cancelReservation(int userID) throws HotelException {
         List<Reservation> listOfReservations = DaoFactory.reservationsDao().reservationsForUser(userID);
         if (listOfReservations.isEmpty()){
